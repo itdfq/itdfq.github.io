@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dfq的博客</title>
+  
+  <subtitle>学渣</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://itdfq.com/"/>
+  <updated>2020-07-29T20:46:01.793Z</updated>
+  <id>https://itdfq.com/</id>
+  
+  <author>
+    <name>duan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySql语法知识</title>
+    <link href="https://itdfq.com/2020/02/16/sort-algorithms/"/>
+    <id>https://itdfq.com/2020/02/16/sort-algorithms/</id>
+    <published>2020-02-16T07:09:23.000Z</published>
+    <updated>2020-07-29T20:46:01.793Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;DDL&quot;&gt;&lt;a href=&quot;#DDL&quot; class=&quot;headerlink&quot; title=&quot;DDL:&quot;&gt;&lt;/a&gt;DDL:&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;一 数据库的使用：
+                    mysql -uroot -p123456
+        
+      
+    
+    </summary>
+    
+      <category term="mysql数据库" scheme="https://itdfq.com/categories/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="leetcode" scheme="https://itdfq.com/tags/leetcode/"/>
+    
+      <category term="数据库" scheme="https://itdfq.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+</feed>
