@@ -331,10 +331,20 @@
         </div>
     </div>
 </div>
+
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+//$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+
+
 </script>
+
+    <script>
+        // 每天切换 banner 图.  Switch banner image every day.
+        $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+    </script>
+    
+    
     </div>
 </div>
 
@@ -351,20 +361,29 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/leetcode/" title="leetcode: 1">
+                <a href="/tags/原创/" title="原创: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="leetcode" style="background-color: #F9EBEA;">leetcode
-                        <span class="tag-length">1</span>
+                            data-tagname="原创" style="background-color: #F9EBEA;">原创
+                        <span class="tag-length">5</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/数据库/" title="数据库: 1">
+                <a href="/tags/项目部署/" title="项目部署: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="项目部署" style="background-color: #F5EEF8;">项目部署
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/数据库/" title="数据库: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="数据库" style="background-color: #F5EEF8;">数据库
-                        <span class="tag-length">1</span>
+                            data-tagname="数据库" style="background-color: #D5F5E3;">数据库
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -379,7 +398,39 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="row tags-posts">
             
             
-            <div class="article tag-post col s12 m6 l4" data-tags="leetcode, 数据库" data-aos="fade-up">
+            <div class="article tag-post col s12 m6 l4" data-tags="原创, 数据库" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2020/07/30/oracle-shu-ju-ku/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Oracle数据库笔记">
+                            
+                            <span class="card-title">Oracle数据库笔记</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Oracle数据库/" class="post-category" target="_blank">
+                                Oracle数据库
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="原创, 数据库" data-aos="fade-up">
                 <div class="card">
                     <a href="/2020/02/16/sort-algorithms/">
                         <div class="card-image tag-image">
@@ -418,11 +469,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2017-2020 Duan. 版权所有
+            &copy; 2020-2023 Duan. 版权所有
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">6k</span>
+            <span class="white-color">7.9k</span>
             
 
             <br>
@@ -529,7 +580,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2020, 07, 29, 00, 00, 00); //北京时间2018-2-13 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -608,6 +659,8 @@ $(function () {
     color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
     </script>
     <!-- 雪花特效 -->
+    
+    <script type="text/javascript" src="/libs/others/snow.js"></script>
     
 
 </body>
