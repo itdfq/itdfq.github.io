@@ -4,20 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Oracle数据库笔记, 123">
+    <meta name="keywords" content="Mybatis逆向工程, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="Oracle数据库笔记
-创建表空间datafile &#39;c:\itheima.dbf&#39;
-size 100m
-autoextend on
-next 10m;
+    <meta name="description" content="
+逆向工程所依赖的jar包
 
-
-
-删除表空间drop tablespace itheima;
-创建用户create">
+ &amp;lt;dependencies&amp;gt;
+       &amp;lt;dependency&amp;gt;
+           &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;
+   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -25,7 +22,7 @@ next 10m;
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Oracle数据库笔记 | dfq的博客</title>
+    <title>Mybatis逆向工程 | dfq的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -334,13 +331,13 @@ next 10m;
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Oracle数据库笔记
+                        Mybatis逆向工程
                     </div>
                 </div>
             </div>
@@ -455,8 +452,8 @@ next 10m;
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/数据库/" target="_blank">
-                            <span class="chip bg-color">数据库</span>
+                        <a href="/tags/逆向工程/" target="_blank">
+                            <span class="chip bg-color">逆向工程</span>
                         </a>
                         
                     </div>
@@ -467,8 +464,8 @@ next 10m;
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Oracle数据库/" class="post-category" target="_blank">
-                            Oracle数据库
+                        <a href="/categories/数据库/" class="post-category" target="_blank">
+                            数据库
                         </a>
                         
                     </div>
@@ -479,7 +476,7 @@ next 10m;
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-30
+                    2020-09-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -493,7 +490,7 @@ next 10m;
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    768
                 </div>
                 
 
@@ -516,63 +513,118 @@ next 10m;
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Oracle数据库笔记"><a href="#Oracle数据库笔记" class="headerlink" title="Oracle数据库笔记"></a><font color="red">Oracle数据库笔记</font></h1><ul>
-<li><h3 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h3><pre class="line-numbers language-create"><code class="language-create">datafile 'c:\itheima.dbf'
-size 100m
-autoextend on
-next 10m;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+                <ul>
+<li><h2 id="逆向工程所依赖的jar包"><a href="#逆向工程所依赖的jar包" class="headerlink" title="逆向工程所依赖的jar包"></a>逆向工程所依赖的jar包</h2></li>
 </ul>
-<ul>
-<li><h3 id="删除表空间"><a href="#删除表空间" class="headerlink" title="删除表空间"></a>删除表空间</h3><pre><code>drop tablespace itheima;</code></pre></li>
-<li><h3 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h3><pre><code>create user itheima
-identified by itheima
-default tablespace itheima;
-                 --给用户授权
-                 --oracle数据库中常用角色
-connect            --连接角色，基本角色
-resource           --开发者角色
-dba                --超级管理员角色</code></pre></li>
-<li><h3 id="给itheima授予dba角色"><a href="#给itheima授予dba角色" class="headerlink" title="给itheima授予dba角色"></a>给itheima授予dba角色</h3><pre><code>grant dba to itheima;</code></pre></li>
-<li><h2 id="切换到itheima用户下"><a href="#切换到itheima用户下" class="headerlink" title="切换到itheima用户下"></a>切换到itheima用户下</h2></li>
-<li><h3 id="创建一个person表"><a href="#创建一个person表" class="headerlink" title="创建一个person表"></a>创建一个person表</h3><pre><code>create table person(
-     pid number(20),
-     name varchar2(10)
-);</code></pre></li>
-<li><h3 id="查询列表"><a href="#查询列表" class="headerlink" title="查询列表"></a>查询列表</h3><pre><code>select * from person;
-grant dba to itheima;</code></pre></li>
-<li><h3 id="添加一列"><a href="#添加一列" class="headerlink" title="添加一列"></a>添加一列</h3><pre><code>alter table person add(gender number(1));</code></pre></li>
-<li><h3 id="删除一列"><a href="#删除一列" class="headerlink" title="删除一列"></a>删除一列</h3><pre><code>alter table person drop column gender;</code></pre></li>
-<li><h3 id="修改列名称"><a href="#修改列名称" class="headerlink" title="修改列名称"></a>修改列名称</h3><pre><code>alter table person rename column gender to sex;</code></pre></li>
-<li><h3 id="修改列类型"><a href="#修改列类型" class="headerlink" title="修改列类型"></a>修改列类型</h3><pre><code>alter table person modify gender char(1);</code></pre></li>
-<li><h3 id="添加一条记录-CRUD都得提交事务"><a href="#添加一条记录-CRUD都得提交事务" class="headerlink" title="添加一条记录(CRUD都得提交事务)"></a>添加一条记录(CRUD都得提交事务)</h3><pre><code>insert into person (pid,name) values(5,&#39;小明&#39;);
-commit;</code></pre></li>
-<li><h3 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h3><pre><code>update person set name = &#39;小马&#39; where pid =5;</code></pre><ul>
-<li><h3 id="删除表中所有记录"><a href="#删除表中所有记录" class="headerlink" title="删除表中所有记录"></a>删除表中所有记录</h3><pre><code>delete from person;</code></pre></li>
+<pre><code> &lt;dependencies&gt;
+       &lt;dependency&gt;
+           &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+           &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+           &lt;version&gt;3.4.5&lt;/version&gt;
+       &lt;/dependency&gt;
+       &lt;dependency&gt;
+           &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+           &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
+           &lt;version&gt;1.3.5&lt;/version&gt;
+       &lt;/dependency&gt;
+       &lt;dependency&gt;
+           &lt;groupId&gt;mysql&lt;/groupId&gt;
+           &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+           &lt;version&gt;5.1.6&lt;/version&gt;
+       &lt;/dependency&gt;
+       &lt;dependency&gt;
+           &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+           &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+           &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
+       &lt;/dependency&gt;
+   &lt;/dependencies&gt;</code></pre><ul>
+<li><h2 id="generator-xml配置文件"><a href="#generator-xml配置文件" class="headerlink" title="generator.xml配置文件"></a>generator.xml配置文件</h2></li>
 </ul>
-</li>
-<li><h3 id="删除表结构"><a href="#删除表结构" class="headerlink" title="删除表结构"></a>删除表结构</h3><pre><code>drop table person;</code></pre><p>先删除表，再次创建表，效果等用于删除表中的全部记录。在数据量的大的情况下，尤其在表中带有索引的情况下，该操作的小路很高。<br>索引可以提高查询效率，但是会影响增删改查。</p>
-<pre><code>truncate table person;</code></pre><p>序列不真的属于任何一张表，但是可以逻辑和表绑定</p>
-</li>
-</ul>
-<p>序列:默认从1开始一次递增,主要给主键复制使用</p>
-<pre><code>nextval下一个值，currval当前值
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration
+        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
 
-dual:虚表，知识为了不全语法，没有意义
-create sequence s_person;
-select s_person.nextval from dual;
-insert into person(pid,name)values(s_person.nextval,&#39;小敏&#39;);
-commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据库是被锁定的，得进行解锁）</p>
-<ul>
-<li><h2 id="初学者必学"><a href="#初学者必学" class="headerlink" title="初学者必学"></a>初学者必学</h2></li>
-<li><h3 id="解锁"><a href="#解锁" class="headerlink" title="解锁"></a>解锁</h3>```<br>alter  user scott account unlock;</li>
-</ul>
-<p>–解锁密码(重置密码)<br>alter user scott identified by tiger;<br>–切换到scoot用户<br>–切换到scott用户<br>–单行函数：作用于一行，返回一个值<br>—字符函数<br>select upper(‘yes’) from dual;–YES<br>select lower(‘YES’) from dual;<br>–数值函数<br>select round(26.18,1) from dual;–四舍五入26.2<br>select round(26.18,-1) from dual;–四舍五入30<br>select mod(10,3) from dual; –求余数1<br>–日期函数<br>–查询出emp表中所有员工距离现在几天<br>select  sysdate-e.hiredate from emp e;<br>–算出明天此刻<br>select sysdate+1 from dual;<br>—转换函数<br>–日期转换字符串<br>select to_char(sysdate,’fm yyyy-mm-dd hh24:mi:ss’) from dual;<br>–字符串转换日期<br>select to_date(‘2018-6-7 16:39:50’,’fm yyyy-mm-dd hh24:mi:ss’) from dual;<br>–通用函数<br>–算出emp表中所有员工的年薪<br>–奖金里面有null<br>select e.sal*12+nvl(e.comm,0 )from emp e;<br>—条件表达式<br>给emp表中员工起中文名称<br>select e.ename,<br>       case e.ename<br>             when ‘SMTH’ then ‘曹贼’<br>                  when ‘ALLEN’then ‘大耳贼’<br>                       when ‘WARD’ then ‘诸葛小二’<br>                                           else’无名’<br>                                                  end<br>from emp e;<br>–oracle除了起别名都用单引号，<br>–oracle专用条件表达式<br>select e.ename,<br>   decode(e.ename,<br>       ‘SMTH’,  ‘曹贼’,<br>           ‘ALLEN’, ‘大耳贼’,<br>               ‘WARD’, ‘诸葛小二’,<br>                   ‘无名’) 中文名<br>from emp e;</p>
-<pre><code>
+&lt;generatorConfiguration&gt;
+&lt;!--生成的jar包都是3点多--&gt;
+    &lt;context id=&quot;testTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
+        &lt;commentGenerator&gt;
+&lt;!--            suppressAllComments属性值：--&gt;
+&lt;!--            ture:自动生成实体类，SQL映射文件时没有注释--&gt;
+&lt;!--            fauls:自动生成实体类，SQL映射文件有注释--&gt;
+            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;
+        &lt;/commentGenerator&gt;
+        &lt;!-- 数据库连接信息 驱动类 连接地址 用户名 密码 --&gt;
+        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
+                        connectionURL=&quot;jdbc:mysql://localhost:3306/spring&quot;
+                        userId=&quot;root&quot;
+                        password=&quot;123456&quot;&gt;
+        &lt;/jdbcConnection&gt;
+&lt;!--    forceBigDecimals属性值：
+        ture:把数据表中的DECTMAL和NUMERIC类型解析为java.math.BigDecimal类型
+        false:解析为Integer类型
+        --&gt;
+        &lt;javaTypeResolver &gt;
+            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
+        &lt;/javaTypeResolver&gt;
+        &lt;!--targetProject属性值:实体类的生成位置
+        targetPackage属性值:实体类所在包的路径 --&gt;
+        &lt;!-- 生成po类的位置 --&gt;
+        &lt;javaModelGenerator targetPackage=&quot;cn.itcast.ssm.po&quot; targetProject=&quot;.\src\main\java&quot;&gt;
+&lt;!--            trimStrings属性值:--&gt;
+&lt;!--            true:对数据库的查询结果进行trim（去空格）操作--&gt;
+&lt;!--            false:不进行trim操作--&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
+            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
+        &lt;/javaModelGenerator&gt;
+        &lt;!--
+        targetProject属性值:SQL映射文件的生成位置
+        targetPackage属性值:SQL映射文件所在包的路径
+        --&gt;
+        &lt;!-- mapper映射文件的生成位置 --&gt;
+        &lt;sqlMapGenerator targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
+        &lt;/sqlMapGenerator&gt;
+        &lt;!-- mapper接口生成的位置 --&gt;
+        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
+            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
+        &lt;/javaClientGenerator&gt;
+        &lt;!-- 指定数据库表 --&gt;
+        &lt;table tableName=&quot;account&quot;&gt;&lt;/table&gt;
+        &lt;table tableName=&quot;user&quot;&gt;&lt;/table&gt;
+    &lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code></pre><p>运行测试方法类</p>
+<pre><code>import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.xml.ConfigurationParser;
+import org.mybatis.generator.exception.InvalidConfigurationException;
+import org.mybatis.generator.exception.XMLParserException;
+import org.mybatis.generator.internal.DefaultShellCallback;
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
-* ## 多行函数（聚合函数）：作用于多行，返回一个值</code></pre><p>select count(1) from emp;–查询总数量 count(主键这一列)<br>select sum(sal) from emp;–工资总和<br>select min(sal) from emp;–最大工资<br>select avg(sal) from emp;–平均工资<br>–分组查询<br>–查询出每个部门的平均工资<br>–分组查询中，出现在group by 后面的原始列，才能出现在select后面<br>–没有出现在group by 后面的列，想在select后面，必须要加上聚合函数。<br>–聚合函数可以吧多行记录变为一个值<br>select e.deptno,avg(e.sal)<br>from emp e<br>group by e.deptno;<br>—查询平均工资高于2000<br>select e.deptno,avg(e.sal) asal<br>from emp e<br>group by e.deptno<br>having avg(e.sal)&gt;2000;<br>–所有条件都不能使用别名来判断<br>select ename,sal s from emp where sal&gt;1500;<br>–查询出每个部门工资高于800的员工的平均工资<br>select e.deptno,avg(e.sal) asal<br>from emp e<br>where e.sal&gt;800<br>group by e.deptno;<br>–where是过滤分组签的数据，having是过滤分组后的数据。<br>–表现形式：where必须在group by 之前，having是在group by 之后。<br>–查询出每个部门工资高于800的员工的平均工资，然后在查询出平均工资高于2000的员工<br>select e.deptno,avg(e.sal) asal<br>from emp e<br>where e.sal&gt;800<br>group by e.deptno</p>
-<pre><code></code></pre>
+public class Test {
+    public static void main(String[] args) throws IOException, XMLParserException, SQLException, InterruptedException, InvalidConfigurationException {
+        File file = new File(&quot;src/main/resources/generator.xml&quot;);//配置文件
+        List&lt;String&gt; warnings = new ArrayList();
+
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(file);
+        DefaultShellCallback callback = new DefaultShellCallback(true);
+        //逆向工程的核心类
+        MyBatisGenerator generator = new MyBatisGenerator(config,callback,warnings);
+        generator.generate(null);
+
+
+    }
+}
+</code></pre>
             </div>
             <hr />
 
@@ -730,9 +782,9 @@ commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Oracle数据库笔记》
+                    《Mybatis逆向工程》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/30/oracle-shu-ju-ku/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/22/mybatis-ni-xiang-gong-cheng/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -773,7 +825,7 @@ commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据�
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/07/30/oracle-shu-ju-ku/',
+        id: '2020/09/22/mybatis-ni-xiang-gong-cheng/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1060,31 +1112,31 @@ commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据�
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/30/springboot-re-bu-shu-shi-bai-jie-jue-fang-an/">
+                <a href="/2020/09/22/echart-jie-shou-ajax-chuan-di-guo-lai-de-json-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="SpringBoot热部署失败解决方案">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Echart接收Ajax传递过来的json数据">
                         
-                        <span class="card-title">SpringBoot热部署失败解决方案</span>
+                        <span class="card-title">Echart接收Ajax传递过来的json数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            springboot热部署失败问题解决
+                            本文介绍如何利用Echart插件通过ajax接受json数据
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/项目部署/" class="post-category" target="_blank">
-                                    项目部署
+                            <a href="/categories/json/" class="post-category" target="_blank">
+                                    json
                                 </a>
                             
                             
@@ -1098,8 +1150,8 @@ commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据�
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/项目部署/" target="_blank">
-                        <span class="chip bg-color">项目部署</span>
+                    <a href="/tags/web前端/" target="_blank">
+                        <span class="chip bg-color">web前端</span>
                     </a>
                     
                 </div>
@@ -1113,19 +1165,19 @@ commit;</code></pre><p>scott用户，密码默认是：tiger（刚安装数据�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/30/arm-xi-tong-shi-yong-docker-bu-shu-de-keng/">
+                <a href="/2020/07/30/springboot-re-bu-shu-shi-bai-jie-jue-fang-an/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="ARM架构使用Docker部署的坑">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="SpringBoot热部署失败解决方案">
                         
-                        <span class="card-title">ARM架构使用Docker部署的坑</span>
+                        <span class="card-title">SpringBoot热部署失败解决方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要介绍ARM架构的一些问题。
+                            springboot热部署失败问题解决
                         
                     </div>
                     <div class="publish-info">

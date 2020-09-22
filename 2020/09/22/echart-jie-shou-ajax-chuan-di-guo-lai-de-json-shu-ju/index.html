@@ -4,17 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ARM架构使用Docker部署的坑, 123">
+    <meta name="keywords" content="Echart接收Ajax传递过来的json数据, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-逆向工程所依赖的jar包
-
- &amp;lt;dependencies&amp;gt;
-       &amp;lt;dependency&amp;gt;
-           &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;
-   ">
+    <meta name="description" content="效果图
+源码前端代码
+&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ARM架构使用Docker部署的坑 | dfq的博客</title>
+    <title>Echart接收Ajax传递过来的json数据 | dfq的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -243,7 +242,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/godweiyang/hexo-matery-modified" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/909256107" class="waves-effect waves-light" target="_blank">
                 <i class="fa fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -299,7 +298,7 @@
     }
 </style>
 
-<a href="https://github.com/godweiyang/hexo-matery-modified" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/909256107" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -331,13 +330,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ARM架构使用Docker部署的坑
+                        Echart接收Ajax传递过来的json数据
                     </div>
                 </div>
             </div>
@@ -452,8 +451,8 @@
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/项目部署/" target="_blank">
-                            <span class="chip bg-color">项目部署</span>
+                        <a href="/tags/web前端/" target="_blank">
+                            <span class="chip bg-color">web前端</span>
                         </a>
                         
                     </div>
@@ -464,8 +463,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/项目部署/" class="post-category" target="_blank">
-                            项目部署
+                        <a href="/categories/json/" class="post-category" target="_blank">
+                            json
                         </a>
                         
                     </div>
@@ -476,7 +475,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-30
+                    2020-09-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -490,7 +489,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    768
+                    912
                 </div>
                 
 
@@ -513,118 +512,165 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><h2 id="逆向工程所依赖的jar包"><a href="#逆向工程所依赖的jar包" class="headerlink" title="逆向工程所依赖的jar包"></a>逆向工程所依赖的jar包</h2></li>
-</ul>
-<pre><code> &lt;dependencies&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-           &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-           &lt;version&gt;3.4.5&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-           &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
-           &lt;version&gt;1.3.5&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;mysql&lt;/groupId&gt;
-           &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-           &lt;version&gt;5.1.6&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-           &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-           &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-       &lt;/dependency&gt;
-   &lt;/dependencies&gt;</code></pre><ul>
-<li><h2 id="generator-xml配置文件"><a href="#generator-xml配置文件" class="headerlink" title="generator.xml配置文件"></a>generator.xml配置文件</h2></li>
-</ul>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE generatorConfiguration
-        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
-        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
-
-&lt;generatorConfiguration&gt;
-&lt;!--生成的jar包都是3点多--&gt;
-    &lt;context id=&quot;testTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
-        &lt;commentGenerator&gt;
-&lt;!--            suppressAllComments属性值：--&gt;
-&lt;!--            ture:自动生成实体类，SQL映射文件时没有注释--&gt;
-&lt;!--            fauls:自动生成实体类，SQL映射文件有注释--&gt;
-            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;
-        &lt;/commentGenerator&gt;
-        &lt;!-- 数据库连接信息 驱动类 连接地址 用户名 密码 --&gt;
-        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
-                        connectionURL=&quot;jdbc:mysql://localhost:3306/spring&quot;
-                        userId=&quot;root&quot;
-                        password=&quot;123456&quot;&gt;
-        &lt;/jdbcConnection&gt;
-&lt;!--    forceBigDecimals属性值：
-        ture:把数据表中的DECTMAL和NUMERIC类型解析为java.math.BigDecimal类型
-        false:解析为Integer类型
-        --&gt;
-        &lt;javaTypeResolver &gt;
-            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
-        &lt;/javaTypeResolver&gt;
-        &lt;!--targetProject属性值:实体类的生成位置
-        targetPackage属性值:实体类所在包的路径 --&gt;
-        &lt;!-- 生成po类的位置 --&gt;
-        &lt;javaModelGenerator targetPackage=&quot;cn.itcast.ssm.po&quot; targetProject=&quot;.\src\main\java&quot;&gt;
-&lt;!--            trimStrings属性值:--&gt;
-&lt;!--            true:对数据库的查询结果进行trim（去空格）操作--&gt;
-&lt;!--            false:不进行trim操作--&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
-        &lt;/javaModelGenerator&gt;
-        &lt;!--
-        targetProject属性值:SQL映射文件的生成位置
-        targetPackage属性值:SQL映射文件所在包的路径
-        --&gt;
-        &lt;!-- mapper映射文件的生成位置 --&gt;
-        &lt;sqlMapGenerator targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-        &lt;/sqlMapGenerator&gt;
-        &lt;!-- mapper接口生成的位置 --&gt;
-        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-        &lt;/javaClientGenerator&gt;
-        &lt;!-- 指定数据库表 --&gt;
-        &lt;table tableName=&quot;account&quot;&gt;&lt;/table&gt;
-        &lt;table tableName=&quot;user&quot;&gt;&lt;/table&gt;
-    &lt;/context&gt;
-&lt;/generatorConfiguration&gt;
-</code></pre><p>运行测试方法类</p>
-<pre><code>import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.config.Configuration;
-import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.exception.InvalidConfigurationException;
-import org.mybatis.generator.exception.XMLParserException;
-import org.mybatis.generator.internal.DefaultShellCallback;
-
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-
-public class Test {
-    public static void main(String[] args) throws IOException, XMLParserException, SQLException, InterruptedException, InvalidConfigurationException {
-        File file = new File(&quot;src/main/resources/generator.xml&quot;);//配置文件
-        List&lt;String&gt; warnings = new ArrayList();
-
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(file);
-        DefaultShellCallback callback = new DefaultShellCallback(true);
-        //逆向工程的核心类
-        MyBatisGenerator generator = new MyBatisGenerator(config,callback,warnings);
-        generator.generate(null);
-
-
+                <h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://img-blog.csdnimg.cn/20200918194249836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>前端代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;图形输出&lt;/title&gt;
+    &lt;script src=&quot;js/jquery-1.9.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/echarts.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/echarts.helper.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body onresize=&quot;myFunction()&quot;&gt;
+&lt;!-- 为 ECharts 准备一个具备大小（宽高）的 DOM --&gt;
+&lt;div id=&quot;main&quot; style=&quot;width: 100%;height:400px;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function myFunction(){
+        var w = window.outerHeight;
+        var h =window.outerHeight;
     }
-}
-</code></pre>
+    var myChart = echarts.init(document.getElementById(&#39;main&#39;));
+    // 显示标题，图例和空的坐标轴
+    myChart.setOption({
+        title: {
+            text: &#39;贪夜蛾自动检测&#39;
+        },
+        tooltip: {
+            trigger: &#39;axis&#39;, //触发类型；轴触发，axis则鼠标hover到一条柱状图显示全部数据，item则鼠标hover到折线点显示相应数据，
+            axisPointer: {  //坐标轴指示器，坐标轴触发有效，
+                type: &#39;line&#39;, //默认为line，line直线，cross十字准星，shadow阴影
+                crossStyle: {
+                    color: &#39;#fff&#39;
+                }
+            }
+        },
+        legend: {
+            data:[&#39;红外计数&#39;,&#39;PM2.5&#39;,&#39;温度&#39;,&#39;湿度&#39;]
+        },
+        xAxis: {
+            boundaryGap: false,
+            data: []
+        },
+        grid: {
+            left: &#39;3%&#39;,
+            right: &#39;4%&#39;,
+            bottom: &#39;3%&#39;,
+            containLabel: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {}
+            }
+        },
+        yAxis: {},
+        series: [{
+            name: &#39;红外计数&#39;,
+            type: &#39;line&#39;,
+            data: []
+        },{
+            name: &#39;PM2.5&#39;,
+            type: &#39;line&#39;,
+            data: []
+        },{
+            name: &#39;温度&#39;,
+            type: &#39;line&#39;,
+            data: []
+        },{
+            name: &#39;湿度&#39;,
+            type: &#39;line&#39;,
+            data: []
+        }]
+    });
+    myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    var names=[];    //类别数组（实际用来盛放X轴坐标值）
+    var nums=[];    //销量数组（实际用来盛放Y坐标值）
+    var nums1=[];
+    var nums2=[];
+    var nums3=[];
+
+    $.ajax({
+        type : &quot;post&quot;,
+        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url : &quot;/datass/selectAll&quot;,    //请求发送到TestServlet处
+        data : {},
+        dataType : &quot;json&quot;,        //返回数据形式为json
+        success : function(result) {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            if (result) {
+                for(var i=0;i&lt;result.length;i++){
+                    names.push(result[i].nowtime);    //挨个取出类别并填入类别数组
+                }
+                for(var i=0;i&lt;result.length;i++){
+                    nums.push(result[i].hongwai);    //挨个取出销量并填入销量数组
+                }
+                for(var i=0;i&lt;result.length;i++){
+                    nums1.push(result[i].pm);
+                }
+                for(var i=0;i&lt;result.length;i++){
+                    nums2.push(result[i].wendu);
+                    nums3.push(result[i].shidu);
+                }
+                myChart.hideLoading();    //隐藏加载动画
+                myChart.setOption({        //加载数据图表
+                    xAxis: {
+                        data: names
+                    },
+                    series: [{
+                        // 根据名字对应到相应的系列
+                        name: &#39;红外计数&#39;,
+                        data: nums
+                    },{
+                        name: &#39;PM2.5&#39;,
+                        data: nums1
+                    },{
+                        name: &#39;温度&#39;,
+                        data: nums2
+                    },{
+                        name: &#39;湿度&#39;,
+                        data: nums3
+                    }]
+                });
+                myChart.setOption(option);
+                setTimeout(function (){
+                    window.onresize = function (){
+                        myChart.resize();
+                    }
+                },200)
+
+            }
+
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert(&quot;图表请求数据失败!&quot;);
+            myChart.hideLoading();
+        }
+    })
+    // window.onresize = myChart.resize();
+    // $(&quot;#main&quot;).resize(myChart.resize);
+    // myChart.setOption(option);
+    myChart.setOption(option);
+    setTimeout(function (){
+        window.onresize = function (){
+            myChart.resize();
+        }
+    },200)
+
+
+&lt;/script&gt;
+
+
+&lt;/html&gt;</code></pre><p>后台传送json数据</p>
+<pre><code> @RequestMapping(&quot;/selectAll&quot;)
+    @ApiOperation(&quot;查询所有&quot;)
+    public List&lt;Datas&gt; selectAll(Map map){
+
+        return datasService.selectAll(map);
+    }</code></pre><p>前端接收的json数据</p>
+<pre><code>[{&quot;id&quot;:1,&quot;nowtime&quot;:&quot;2020-09-16 21:05:15&quot;,&quot;hongwai&quot;:12,&quot;fengxiang&quot;:&quot;南偏北风&quot;,&quot;fengsu&quot;:&quot;20.3&quot;,&quot;wendu&quot;:36.5,&quot;shidu&quot;:45.1,&quot;pm&quot;:52.3,&quot;tWendu10&quot;:34.2,&quot;tShidu10&quot;:32.1,&quot;tWendu20&quot;:30.5,&quot;tShidu20&quot;:24.1,&quot;tWendu30&quot;:20.4,&quot;tShidu30&quot;:40.5},{&quot;id&quot;:2,&quot;nowtime&quot;:&quot;2020-09-02 17:49:11&quot;,&quot;hongwai&quot;:23,&quot;fengxiang&quot;:&quot;北风&quot;,&quot;fengsu&quot;:&quot;21.4&quot;,&quot;wendu&quot;:45.6,&quot;shidu&quot;:48.4,&quot;pm&quot;:54.7,&quot;tWendu10&quot;:45.8,&quot;tShidu10&quot;:10.2,&quot;tWendu20&quot;:23.5,&quot;tShidu20&quot;:24.5,&quot;tWendu30&quot;:27.1,&quot;tShidu30&quot;:16.4}]</code></pre>
             </div>
             <hr />
 
@@ -782,9 +828,9 @@ public class Test {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ARM架构使用Docker部署的坑》
+                    《Echart接收Ajax传递过来的json数据》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/30/mybatis-ni-xiang-gong-cheng/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/22/echart-jie-shou-ajax-chuan-di-guo-lai-de-json-shu-ju/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -825,7 +871,7 @@ public class Test {
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/07/30/mybatis-ni-xiang-gong-cheng/',
+        id: '2020/09/22/echart-jie-shou-ajax-chuan-di-guo-lai-de-json-shu-ju/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1112,31 +1158,31 @@ public class Test {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/30/oracle-shu-ju-ku/">
+                <a href="/2020/09/22/docker-bu-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Oracle数据库笔记">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="docker部署">
                         
-                        <span class="card-title">Oracle数据库笔记</span>
+                        <span class="card-title">docker部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要介绍Oracle的一些基本知识。
+                            本文介绍如何使用docker进行项目部署
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Oracle数据库/" class="post-category" target="_blank">
-                                    Oracle数据库
+                            <a href="/categories/项目部署/" class="post-category" target="_blank">
+                                    项目部署
                                 </a>
                             
                             
@@ -1150,8 +1196,8 @@ public class Test {
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -1165,31 +1211,31 @@ public class Test {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/16/sort-algorithms/">
+                <a href="/2020/09/22/mybatis-ni-xiang-gong-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="MySql语法知识">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Mybatis逆向工程">
                         
-                        <span class="card-title">MySql语法知识</span>
+                        <span class="card-title">Mybatis逆向工程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文整理mysql基本常用指令
+                            Mybatis配置文件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/mysql数据库/" class="post-category" target="_blank">
-                                    mysql数据库
+                            <a href="/categories/数据库/" class="post-category" target="_blank">
+                                    数据库
                                 </a>
                             
                             
@@ -1203,8 +1249,8 @@ public class Test {
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/逆向工程/" target="_blank">
+                        <span class="chip bg-color">逆向工程</span>
                     </a>
                     
                 </div>
@@ -1378,7 +1424,7 @@ public class Test {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.9k</span>
+            <span class="white-color">9.2k</span>
             
 
             <br>
