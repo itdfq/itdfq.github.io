@@ -4,17 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Mybatis逆向工程, 123">
+    <meta name="keywords" content="IDEA字体异常修改方法, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
     <meta name="description" content="
-逆向工程所依赖的jar包
+IDEA字体设置过大，无法修改问题解决
 
- &amp;lt;dependencies&amp;gt;
-       &amp;lt;dependency&amp;gt;
-           &amp;lt;groupId&amp;gt;org.mybatis&amp;lt;/groupId&amp;gt;
-   ">
+我不小心设置错误，把菜单字体设置为140，并且取消了鼠标滑轮控制大小我也找到了解决办法 如下图
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Mybatis逆向工程 | dfq的博客</title>
+    <title>IDEA字体异常修改方法 | dfq的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -331,13 +329,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Mybatis逆向工程
+                        IDEA字体异常修改方法
                     </div>
                 </div>
             </div>
@@ -452,8 +450,8 @@
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/逆向工程/" target="_blank">
-                            <span class="chip bg-color">逆向工程</span>
+                        <a href="/tags/IDEA配置/" target="_blank">
+                            <span class="chip bg-color">IDEA配置</span>
                         </a>
                         
                     </div>
@@ -464,8 +462,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/数据库/" class="post-category" target="_blank">
-                            数据库
+                        <a href="/categories/IDEA/" class="post-category" target="_blank">
+                            IDEA
                         </a>
                         
                     </div>
@@ -476,7 +474,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-22
+                    2020-10-30
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -490,14 +488,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    768
+                    57
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
                 
@@ -514,117 +512,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li><h2 id="逆向工程所依赖的jar包"><a href="#逆向工程所依赖的jar包" class="headerlink" title="逆向工程所依赖的jar包"></a>逆向工程所依赖的jar包</h2></li>
+<li><h1 id="IDEA字体设置过大，无法修改问题解决"><a href="#IDEA字体设置过大，无法修改问题解决" class="headerlink" title="IDEA字体设置过大，无法修改问题解决"></a>IDEA字体设置过大，无法修改问题解决</h1></li>
 </ul>
-<pre><code> &lt;dependencies&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-           &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-           &lt;version&gt;3.4.5&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
-           &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
-           &lt;version&gt;1.3.5&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;mysql&lt;/groupId&gt;
-           &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-           &lt;version&gt;5.1.6&lt;/version&gt;
-       &lt;/dependency&gt;
-       &lt;dependency&gt;
-           &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-           &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
-           &lt;version&gt;5.0.2.RELEASE&lt;/version&gt;
-       &lt;/dependency&gt;
-   &lt;/dependencies&gt;</code></pre><ul>
-<li><h2 id="generator-xml配置文件"><a href="#generator-xml配置文件" class="headerlink" title="generator.xml配置文件"></a>generator.xml配置文件</h2></li>
-</ul>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE generatorConfiguration
-        PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
-        &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+<p><img src="https://img-blog.csdnimg.cn/20190330170144286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">我不小心设置错误，把菜单字体设置为140，并且取消了鼠标滑轮控制大小我也找到了解决办法 如下图<br><img src="https://img-blog.csdnimg.cn/2019033017031836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
-&lt;generatorConfiguration&gt;
-&lt;!--生成的jar包都是3点多--&gt;
-    &lt;context id=&quot;testTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
-        &lt;commentGenerator&gt;
-&lt;!--            suppressAllComments属性值：--&gt;
-&lt;!--            ture:自动生成实体类，SQL映射文件时没有注释--&gt;
-&lt;!--            fauls:自动生成实体类，SQL映射文件有注释--&gt;
-            &lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot;/&gt;
-        &lt;/commentGenerator&gt;
-        &lt;!-- 数据库连接信息 驱动类 连接地址 用户名 密码 --&gt;
-        &lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
-                        connectionURL=&quot;jdbc:mysql://localhost:3306/spring&quot;
-                        userId=&quot;root&quot;
-                        password=&quot;123456&quot;&gt;
-        &lt;/jdbcConnection&gt;
-&lt;!--    forceBigDecimals属性值：
-        ture:把数据表中的DECTMAL和NUMERIC类型解析为java.math.BigDecimal类型
-        false:解析为Integer类型
-        --&gt;
-        &lt;javaTypeResolver &gt;
-            &lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
-        &lt;/javaTypeResolver&gt;
-        &lt;!--targetProject属性值:实体类的生成位置
-        targetPackage属性值:实体类所在包的路径 --&gt;
-        &lt;!-- 生成po类的位置 --&gt;
-        &lt;javaModelGenerator targetPackage=&quot;cn.itcast.ssm.po&quot; targetProject=&quot;.\src\main\java&quot;&gt;
-&lt;!--            trimStrings属性值:--&gt;
-&lt;!--            true:对数据库的查询结果进行trim（去空格）操作--&gt;
-&lt;!--            false:不进行trim操作--&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-            &lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
-        &lt;/javaModelGenerator&gt;
-        &lt;!--
-        targetProject属性值:SQL映射文件的生成位置
-        targetPackage属性值:SQL映射文件所在包的路径
-        --&gt;
-        &lt;!-- mapper映射文件的生成位置 --&gt;
-        &lt;sqlMapGenerator targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-        &lt;/sqlMapGenerator&gt;
-        &lt;!-- mapper接口生成的位置 --&gt;
-        &lt;javaClientGenerator type=&quot;XMLMAPPER&quot; targetPackage=&quot;cn.itcast.ssm.mapper&quot;  targetProject=&quot;.\src\main\java&quot;&gt;
-            &lt;property name=&quot;enableSubPackages&quot; value=&quot;true&quot; /&gt;
-        &lt;/javaClientGenerator&gt;
-        &lt;!-- 指定数据库表 --&gt;
-        &lt;table tableName=&quot;account&quot;&gt;&lt;/table&gt;
-        &lt;table tableName=&quot;user&quot;&gt;&lt;/table&gt;
-    &lt;/context&gt;
-&lt;/generatorConfiguration&gt;
-</code></pre><p>运行测试方法类</p>
-<pre><code>import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.config.Configuration;
-import org.mybatis.generator.config.xml.ConfigurationParser;
-import org.mybatis.generator.exception.InvalidConfigurationException;
-import org.mybatis.generator.exception.XMLParserException;
-import org.mybatis.generator.internal.DefaultShellCallback;
-
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-
-public class Test {
-    public static void main(String[] args) throws IOException, XMLParserException, SQLException, InterruptedException, InvalidConfigurationException {
-        File file = new File(&quot;src/main/resources/generator.xml&quot;);//配置文件
-        List&lt;String&gt; warnings = new ArrayList();
-
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(file);
-        DefaultShellCallback callback = new DefaultShellCallback(true);
-        //逆向工程的核心类
-        MyBatisGenerator generator = new MyBatisGenerator(config,callback,warnings);
-        generator.generate(null);
-
-
-    }
-}
-</code></pre>
             </div>
             <hr />
 
@@ -782,9 +673,9 @@ public class Test {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Mybatis逆向工程》
+                    《IDEA字体异常修改方法》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/09/22/mybatis-ni-xiang-gong-cheng/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -825,7 +716,7 @@ public class Test {
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/09/22/mybatis-ni-xiang-gong-cheng/',
+        id: '2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1108,41 +999,43 @@ public class Test {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/22/docker-bu-shu/">
+                <a href="/2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="docker部署">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="IDEA字体异常修改方法">
                         
-                        <span class="card-title">docker部署</span>
+                        <span class="card-title">IDEA字体异常修改方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍如何使用docker进行项目部署
+                            IDEA字体过大
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/项目部署/" class="post-category" target="_blank">
-                                    项目部署
+                            <a href="/categories/IDEA/" class="post-category" target="_blank">
+                                    IDEA
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1150,8 +1043,8 @@ public class Test {
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/docker/" target="_blank">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/IDEA配置/" target="_blank">
+                        <span class="chip bg-color">IDEA配置</span>
                     </a>
                     
                 </div>
@@ -1165,31 +1058,31 @@ public class Test {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/30/springboot-re-bu-shu-shi-bai-jie-jue-fang-an/">
+                <a href="/2020/09/22/echart-jie-shou-ajax-chuan-di-guo-lai-de-json-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="SpringBoot热部署失败解决方案">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Echart接收Ajax传递过来的json数据">
                         
-                        <span class="card-title">SpringBoot热部署失败解决方案</span>
+                        <span class="card-title">Echart接收Ajax传递过来的json数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            springboot热部署失败问题解决
+                            本文介绍如何利用Echart插件通过ajax接受json数据
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/项目部署/" class="post-category" target="_blank">
-                                    项目部署
+                            <a href="/categories/json/" class="post-category" target="_blank">
+                                    json
                                 </a>
                             
                             
@@ -1203,8 +1096,8 @@ public class Test {
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/项目部署/" target="_blank">
-                        <span class="chip bg-color">项目部署</span>
+                    <a href="/tags/web前端/" target="_blank">
+                        <span class="chip bg-color">web前端</span>
                     </a>
                     
                 </div>
