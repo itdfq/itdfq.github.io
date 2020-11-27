@@ -4,14 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="IDEA字体异常修改方法, 123">
+    <meta name="keywords" content="MongoDB基本操作, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-IDEA字体设置过大，无法修改问题解决
+    <meta name="description" content="1.安装MongoDB- 安装
+- 配置环境变量
+    C:\Program Files\MongoDB\Server\3.2\bin
+- 在c盘根目录
+    - 创建一个文件夹 data
+    - 在data中创建一个文件夹db
 
-我不小心设置错误，把菜单字体设置为140，并且取消了鼠标滑轮控制大小我也找到了解决办法 如下图
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -20,7 +23,7 @@ IDEA字体设置过大，无法修改问题解决
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>IDEA字体异常修改方法 | God-Chin的博客</title>
+    <title>MongoDB基本操作 | God-Chin的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -329,13 +332,13 @@ IDEA字体设置过大，无法修改问题解决
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        IDEA字体异常修改方法
+                        MongoDB基本操作
                     </div>
                 </div>
             </div>
@@ -450,8 +453,8 @@ IDEA字体设置过大，无法修改问题解决
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/IDEA配置/" target="_blank">
-                            <span class="chip bg-color">IDEA配置</span>
+                        <a href="/tags/数据库操作/" target="_blank">
+                            <span class="chip bg-color">数据库操作</span>
                         </a>
                         
                     </div>
@@ -462,8 +465,8 @@ IDEA字体设置过大，无法修改问题解决
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/IDEA/" class="post-category" target="_blank">
-                            IDEA
+                        <a href="/categories/数据库/" class="post-category" target="_blank">
+                            数据库
                         </a>
                         
                     </div>
@@ -474,7 +477,7 @@ IDEA字体设置过大，无法修改问题解决
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-30
+                    2020-11-27
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -488,14 +491,14 @@ IDEA字体设置过大，无法修改问题解决
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -511,11 +514,140 @@ IDEA字体设置过大，无法修改问题解决
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><h1 id="IDEA字体设置过大，无法修改问题解决"><a href="#IDEA字体设置过大，无法修改问题解决" class="headerlink" title="IDEA字体设置过大，无法修改问题解决"></a>IDEA字体设置过大，无法修改问题解决</h1></li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20190330170144286.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">我不小心设置错误，把菜单字体设置为140，并且取消了鼠标滑轮控制大小我也找到了解决办法 如下图<br><img src="https://img-blog.csdnimg.cn/2019033017031836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+                <h1 id="1-安装MongoDB"><a href="#1-安装MongoDB" class="headerlink" title="1.安装MongoDB"></a>1.安装MongoDB</h1><pre><code>- 安装
+- 配置环境变量
+    C:\Program Files\MongoDB\Server\3.2\bin
+- 在c盘根目录
+    - 创建一个文件夹 data
+    - 在data中创建一个文件夹db
 
+- 打开cmd命令行窗口
+    - 输入 mongod 启动mongodb服务器
+    - 32位注意：
+        启动服务器时，需要输入如下内容
+            mongod --storageEngine=mmapv1
+
+            mongod --dbpath 数据库路径 --port 端口号
+
+
+
+- 在打开一个cmd窗口
+    - 输入 mongo 连接mongodb ，出现 &gt; 
+
+- 数据库（database）
+    - 数据库的服务器
+        - 服务器用来保存数据
+        - mongod 用来启动服务器
+
+    - 数据库的客户端
+        - 客户端用来操作服务器，对数据进行增删改查的操作
+        - mongo 用来启动客户端</code></pre><h4 id="将MongoDB设置为系统服务，可以自动在后台启动，不需要每次都手动启动"><a href="#将MongoDB设置为系统服务，可以自动在后台启动，不需要每次都手动启动" class="headerlink" title="将MongoDB设置为系统服务，可以自动在后台启动，不需要每次都手动启动"></a>将MongoDB设置为系统服务，可以自动在后台启动，不需要每次都手动启动</h4><pre><code>    1.在c盘根目录创建data
+        - 在data下创建db和log文件夹
+    2.创建配置文件
+        在目录 C:\Program Files\MongoDB\Server\3.2 下添加一个配置文件
+        mongod.cfg
+        内容如下：
+        systemLog:
+            destination: file
+            path: c:\data\log\mongod.log
+        storage:
+            dbPath: c:\data\db
+
+    3.以管理员的身份打开命令行窗口    
+
+    4.执行如下的命令
+        sc.exe create MongoDB binPath= &quot;\&quot;C:\Program Files\MongoDB\Server\3.2\bin\mongod.exe\&quot; --service --config=\&quot;C:\Program Files\MongoDB\Server\3.2\mongod.cfg\&quot;&quot; DisplayName= &quot;MongoDB&quot; start= &quot;auto&quot;
+
+        sc.exe create MongoDB binPath= &quot;\&quot;mongod的bin目录\mongod.exe\&quot; --service --config=\&quot;mongo的安装目录\mongod.cfg\&quot;&quot; DisplayName= &quot;MongoDB&quot; start= &quot;auto&quot;
+
+    5.启动mongodb服务
+
+    6.如果启动失败，证明上边的操作有误，
+        在控制台输入 sc delete MongoDB 删除之前配置的服务
+        然后从第一步再来一次</code></pre><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><pre><code>    数据库（database）
+    集合（collection）
+    文档（document）
+        - 在MongoDB中，数据库和集合都不需要手动创建，
+            当我们创建文档时，如果文档所在的集合或数据库不存在会自动创建数据库和集合
+
+- 基本指令
+    show dbs
+    show databases
+        - 显示当前的所有数据库
+    use 数据库名
+        - 进入到指定的数据库中
+    db
+        - db表示的是当前所处的数据库
+    show collections
+        - 显示数据库中所有的集合
+
+- 数据库的CRUD（增删改查）的操作
+    - 向数据库中插入文档
+        db.&lt;collection&gt;.insert(doc)
+            - 向集合中插入一个文档
+            - 例子：向test数据库中的，stus集合中插入一个新的学生对象
+                {name:&quot;孙悟空&quot;,age:18,gender:&quot;男&quot;}
+                db.stus.insert({name:&quot;孙悟空&quot;,age:18,gender:&quot;男&quot;})
+
+        db.&lt;collection&gt;.find()
+            - 查询当前集合中的所有的文档</code></pre><h2 id="MongoDB的基本的指令"><a href="#MongoDB的基本的指令" class="headerlink" title="MongoDB的基本的指令"></a>MongoDB的基本的指令</h2><pre><code>    - 启动服务器
+        mongod --dbpath 路径 --port 端口号
+
+    - 启动客户端
+        mongo
+
+- MongoDB的CRUD的操作            
+    - 基本操作
+        use 数据库
+            - 进入指定的数据库
+        show dbs
+            - 显示所有的数据库
+        show collections
+            - 显示数据库中所有的集合
+        db
+            - 显示当前所在的数据库
+
+    - 向数据库中插入文档
+        - db.collection.insert()
+            - insert()可以向集合中插入一个或多个文档
+        - db.collection.insertOne()
+            - 向集合中插入一个文档
+        - db.collection.insertMany()
+            - 向集合中插入多个文档
+
+    - 查询数据库中的文档
+        - db.collection.find()
+            - 可以根据指定条件从集合中查询所有符合条件的文档
+            - 返回的是一个数组
+        - db.collection.findOne()
+            - 查询第一个符合条件的文档
+            - 返回的是一个对象
+        - db.collection.find().count()
+            - 查询符合条件的文档的数量
+
+    - 修改数据库中的文档
+        - db.collection.update()
+            - 可以修改、替换集合中的一个或多个文档
+        - db.collection.updateOne()
+            - 修改集合中的一个文档
+        - db.collection.updateMany()
+            - 修改集合中的多个文档
+        - db.collection.replaceOne()
+            - 替换集合中的一个文档
+
+    - 删除集合中的文档
+        - db.collection.remove()
+            - 删除集合中的一个或多个文档（默认删除多个）
+        - db.collection.deleteOne()
+            - 删除集合中的一个文档
+        - db.collection.deleteMany()
+            - 删除集合中的多个文档
+        - 清空一个集合
+            db.collection.remove({})
+        - 删除一个集合
+            db.collection.drop()
+        - 删除一个数据库
+            db.dropDatabase()</code></pre>
             </div>
             <hr />
 
@@ -673,9 +805,9 @@ IDEA字体设置过大，无法修改问题解决
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《IDEA字体异常修改方法》
+                    《MongoDB基本操作》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/11/27/mongodb-ji-ben-cao-zuo/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -716,7 +848,7 @@ IDEA字体设置过大，无法修改问题解决
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/',
+        id: '2020/11/27/mongodb-ji-ben-cao-zuo/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1003,19 +1135,19 @@ IDEA字体设置过大，无法修改问题解决
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/27/mongodb-ji-ben-cao-zuo/">
+                <a href="/2020/11/27/el-biao-da-shi-jstl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="MongoDB基本操作">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="EL表达式&& JSTL">
                         
-                        <span class="card-title">MongoDB基本操作</span>
+                        <span class="card-title">EL表达式&& JSTL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MongoDB安装和基本操作
+                            讲解一些EL表达式和JSTL
                         
                     </div>
                     <div class="publish-info">
@@ -1026,8 +1158,8 @@ IDEA字体设置过大，无法修改问题解决
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/数据库/" class="post-category" target="_blank">
-                                    数据库
+                            <a href="/categories/编程语言/" class="post-category" target="_blank">
+                                    编程语言
                                 </a>
                             
                             
@@ -1041,8 +1173,8 @@ IDEA字体设置过大，无法修改问题解决
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/数据库操作/" target="_blank">
-                        <span class="chip bg-color">数据库操作</span>
+                    <a href="/tags/EL表达式/" target="_blank">
+                        <span class="chip bg-color">EL表达式</span>
                     </a>
                     
                 </div>
@@ -1056,31 +1188,31 @@ IDEA字体设置过大，无法修改问题解决
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/22/echart-jie-shou-ajax-chuan-di-guo-lai-de-json-shu-ju/">
+                <a href="/2020/10/30/idea-zi-ti-yi-chang-xiu-gai-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Echart接收Ajax传递过来的json数据">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="IDEA字体异常修改方法">
                         
-                        <span class="card-title">Echart接收Ajax传递过来的json数据</span>
+                        <span class="card-title">IDEA字体异常修改方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍如何利用Echart插件通过ajax接受json数据
+                            IDEA字体过大
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-10-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/json/" class="post-category" target="_blank">
-                                    json
+                            <a href="/categories/IDEA/" class="post-category" target="_blank">
+                                    IDEA
                                 </a>
                             
                             
@@ -1094,8 +1226,8 @@ IDEA字体设置过大，无法修改问题解决
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/web前端/" target="_blank">
-                        <span class="chip bg-color">web前端</span>
+                    <a href="/tags/IDEA配置/" target="_blank">
+                        <span class="chip bg-color">IDEA配置</span>
                     </a>
                     
                 </div>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>dfq的博客</title>
+  <title>God-Chin的博客</title>
   
-  <subtitle>学渣</subtitle>
+  <subtitle>God-Chin</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/909256107/909256107.github.io/"/>
-  <updated>2020-10-30T01:35:21.492Z</updated>
+  <updated>2020-11-27T05:38:31.242Z</updated>
   <id>https://github.com/909256107/909256107.github.io/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记</title>
+    <link href="https://github.com/909256107/909256107.github.io/2020/11/27/cookie-session-jsp-ru-men-xue-xi-bi-ji/"/>
+    <id>https://github.com/909256107/909256107.github.io/2020/11/27/cookie-session-jsp-ru-men-xue-xi-bi-ji/</id>
+    <published>2020-11-27T05:35:00.000Z</published>
+    <updated>2020-11-27T05:38:31.242Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;会话技术&quot;&gt;&lt;a href=&quot;#会话技术&quot; class=&quot;headerlink&quot; title=&quot;会话技术&quot;&gt;&lt;/a&gt;会话技术&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 会话：一次会话中包含多次请求和响应。
+    *
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://github.com/909256107/909256107.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/909256107/909256107.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="Cookie&amp;Session" scheme="https://github.com/909256107/909256107.github.io/tags/Cookie-Session/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EL表达式&amp;&amp; JSTL</title>
+    <link href="https://github.com/909256107/909256107.github.io/2020/11/27/el-biao-da-shi-jstl/"/>
+    <id>https://github.com/909256107/909256107.github.io/2020/11/27/el-biao-da-shi-jstl/</id>
+    <published>2020-11-27T05:32:30.000Z</published>
+    <updated>2020-11-27T05:34:02.289Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;EL表达式&quot;&gt;&lt;a href=&quot;#EL表达式&quot; class=&quot;headerlink&quot; title=&quot;EL表达式&quot;&gt;&lt;/a&gt;EL表达式&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language 表达式语言
+2.
+        
+      
+    
+    </summary>
+    
+      <category term="编程语言" scheme="https://github.com/909256107/909256107.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/909256107/909256107.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="EL表达式" scheme="https://github.com/909256107/909256107.github.io/tags/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB基本操作</title>
+    <link href="https://github.com/909256107/909256107.github.io/2020/11/27/mongodb-ji-ben-cao-zuo/"/>
+    <id>https://github.com/909256107/909256107.github.io/2020/11/27/mongodb-ji-ben-cao-zuo/</id>
+    <published>2020-11-27T05:29:07.000Z</published>
+    <updated>2020-11-27T05:30:28.373Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-安装MongoDB&quot;&gt;&lt;a href=&quot;#1-安装MongoDB&quot; class=&quot;headerlink&quot; title=&quot;1.安装MongoDB&quot;&gt;&lt;/a&gt;1.安装MongoDB&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;- 安装
+- 配置环境变量
+   
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://github.com/909256107/909256107.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/909256107/909256107.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="数据库操作" scheme="https://github.com/909256107/909256107.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>IDEA字体异常修改方法</title>
