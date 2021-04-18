@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Linux命令</title>
+      <link href="/2021/04/18/linux-ming-ling/"/>
+      <url>/2021/04/18/linux-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<ul><li>查看防火墙开放端口</li></ul><pre><code>firewall-cmd --list-all</code></pre><ul><li>开放9000端口</li></ul><pre><code>firewall-cmd --zone=public --add-port=3306/tcp --permanent</code></pre><pre><code>命令含义：–zone #作用域–add-port=80/tcp #添加端口，格式为：端口/通讯协议–permanent #永久生效，没有此参数重启后失效firewall-cmd --reload 并不中断用户连接，即不丢失状态信息</code></pre><ul><li>重载防火墙</li></ul><pre><code>firewall-cmd --reload</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> cmd命令 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 原创 </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker安装Minio存储服务器</title>
       <link href="/2021/04/18/docker-an-zhuang-minio-cun-chu-fu-wu-qi/"/>
       <url>/2021/04/18/docker-an-zhuang-minio-cun-chu-fu-wu-qi/</url>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/909256107/909256107.github.io/"/>
-  <updated>2021-04-18T04:02:22.504Z</updated>
+  <updated>2021-04-18T09:10:12.879Z</updated>
   <id>https://github.com/909256107/909256107.github.io/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令</title>
+    <link href="https://github.com/909256107/909256107.github.io/2021/04/18/linux-ming-ling/"/>
+    <id>https://github.com/909256107/909256107.github.io/2021/04/18/linux-ming-ling/</id>
+    <published>2021-04-18T09:02:51.000Z</published>
+    <updated>2021-04-18T09:10:12.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;查看防火墙开放端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;firewall-cmd --list-all&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;开放9000端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;firewall-cmd
+        
+      
+    
+    </summary>
+    
+      <category term="cmd命令" scheme="https://github.com/909256107/909256107.github.io/categories/cmd%E5%91%BD%E4%BB%A4/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/909256107/909256107.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="Linux" scheme="https://github.com/909256107/909256107.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker安装Minio存储服务器</title>
