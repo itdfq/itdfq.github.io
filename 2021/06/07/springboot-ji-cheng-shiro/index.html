@@ -4,18 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ARM架构使用Docker部署的坑, 123">
+    <meta name="keywords" content="SpringBoot集成Shiro, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="
-需要注意 arm的jdk
-
-FROM arm64v8/openjdk:8
-MAINTAINER duan
-ADD springBootDocker.jar demo.jar
-EXPOSE 8888   
-ENTRYPOINT [&amp;quot">
+    <meta name="description" content="Shiro 简介
+官方介绍
+ Apache Shiro™ is a powerful and easy-to-use Java security framework that performs authentication, authori">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +18,7 @@ ENTRYPOINT [&amp;quot">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ARM架构使用Docker部署的坑 | GodChin的博客</title>
+    <title>SpringBoot集成Shiro | GodChin的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -332,13 +327,13 @@ ENTRYPOINT [&amp;quot">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ARM架构使用Docker部署的坑
+                        SpringBoot集成Shiro
                     </div>
                 </div>
             </div>
@@ -453,8 +448,8 @@ ENTRYPOINT [&amp;quot">
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/项目部署/" target="_blank">
-                            <span class="chip bg-color">项目部署</span>
+                        <a href="/tags/Shiro/" target="_blank">
+                            <span class="chip bg-color">Shiro</span>
                         </a>
                         
                     </div>
@@ -465,8 +460,8 @@ ENTRYPOINT [&amp;quot">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/项目部署/" class="post-category" target="_blank">
-                            项目部署
+                        <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                            SpringBoot
                         </a>
                         
                     </div>
@@ -477,7 +472,7 @@ ENTRYPOINT [&amp;quot">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-30
+                    2021-06-07
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -491,14 +486,14 @@ ENTRYPOINT [&amp;quot">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    103
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
                 
@@ -514,19 +509,309 @@ ENTRYPOINT [&amp;quot">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><h2 id="需要注意-arm的jdk"><a href="#需要注意-arm的jdk" class="headerlink" title="需要注意 arm的jdk"></a>需要注意 arm的jdk</h2></li>
+                <h2 id="Shiro-简介"><a href="#Shiro-简介" class="headerlink" title="Shiro 简介"></a>Shiro 简介</h2><ul>
+<li><p>官方介绍</p>
+<p> Apache Shiro™ is a powerful and easy-to-use Java security framework that performs authentication, authorization, cryptography, and session management. With Shiro’s easy-to-understand API, you can quickly and easily secure any application – from the smallest mobile applications to the largest web and enterprise applications.</p>
+<p> Apache Shiro™是一个强大且易于使用的 Java 安全框架，可执行身份验证、授权、加密和会话管理。凭借 Shiro 易于理解的 API，您可以快速轻松地保护任何应用程序 - 从最小的移动应用程序到最大的 Web 和企业应用程序。</p>
+</li>
 </ul>
-<pre><code>FROM arm64v8/openjdk:8
-MAINTAINER duan
-ADD springBootDocker.jar demo.jar
-EXPOSE 8888   
-ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
-</code></pre><p>创建好Dockerfile文件之后，执行命令 构建镜像：</p>
-<pre><code>  docker build -t my/demo .</code></pre><p>  注意最后的 .  表示 Dockerfile 文件在当前目录下</p>
-<p>   my/demo  构建之后镜像名称</p>
-<p>   镜像构建成功之后，就可以运行容器了：</p>
-<pre><code>   docker run -d --name demo -p 8080:8080 my/demo</code></pre>
+<h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><pre class="line-numbers language-java"><code class="language-java">        <span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>shiro<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>shiro<span class="token operator">-</span>spring<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.7</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><ul>
+<li><p>配置UserRealm <code>主要是处理用户权限</code></p>
+<pre><code> package com.itdfq.springboot_shrio.config;
+
+ import org.apache.shiro.authc.AuthenticationException;
+ import org.apache.shiro.authc.AuthenticationInfo;
+ import org.apache.shiro.authc.AuthenticationToken;
+ import org.apache.shiro.authz.AuthorizationInfo;
+ import org.apache.shiro.realm.AuthorizingRealm;
+ import org.apache.shiro.subject.PrincipalCollection;
+
+ /**
+  * @Author GocChin
+  * @Date 2021/6/6 15:29
+  * @Blog: itdfq.com
+  * @QQ: 909256107
+  * @Descript:
+  */
+ public class UserRealm extends AuthorizingRealm {
+     //授权
+     @Override
+     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+         System.out.println(&quot;执行了授权=》doGetAuthorizationInfo&quot;);
+         return null;
+     }
+     //认证
+     @Override
+     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+         System.out.println(&quot;执行了认证》doGetAuthenticationInfo&quot;);
+         return null;
+     }
+ }</code></pre></li>
+<li><p>编写Config  <code>主要处理请求</code></p>
+</li>
+</ul>
+<pre><code>package com.itdfq.springboot_shrio.config;
+
+import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/**
+ * @Author GocChin
+ * @Date 2021/6/6 15:28
+ * @Blog: itdfq.com
+ * @QQ: 909256107
+ * @Descript:
+ */
+@Configuration
+public class ShiroConfig {
+
+    //ShiroFilterFacctoryBean  3
+    @Bean
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier(&quot;DefaultWebSecurityManager&quot;) DefaultWebSecurityManager manager){
+        ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
+        //设置安全管理器
+        bean.setSecurityManager(manager);
+
+        return bean;
+
+    }
+
+    //DafaultWebSecurityManager 2
+    @Bean(name = &quot;DefaultWebSecurityManager&quot;)                                                       //Qualifier  通过这个注解获取spring管理的 userRealm()方法
+    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier(&quot;userRealm&quot;) UserRealm userRealm){
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setRealm(userRealm);
+        return securityManager;
+    }
+
+    //创建realm对象，需要自定义类  1
+    @Bean(name = &quot;userRealm&quot;)
+    public UserRealm userRealm(){
+        return new UserRealm();
+    }
+
+
+
+}</code></pre><h2 id="登录拦截"><a href="#登录拦截" class="headerlink" title="登录拦截"></a>登录拦截</h2><ul>
+<li>设置登录拦截，以及登录页面</li>
+</ul>
+<pre><code> @Bean
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(@Qualifier(&quot;DefaultWebSecurityManager&quot;) DefaultWebSecurityManager manager){
+        ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
+        //设置安全管理器
+        bean.setSecurityManager(manager);
+        //添加shiro的内置过滤器
+        /**
+         * anon:无需认证就可以访问
+         * authc:必须认证才能用
+         * user:必须拥有记住我功能才能使用
+         * perms:拥有对某个资源的权限才能访问
+         * role:拥有某个角色权限才能访问
+         */
+        Map&lt;String,String&gt; filterMap = new LinkedHashMap&lt;&gt;();
+//        filterMap.put(&quot;/user/add&quot;,&quot;authc&quot;);
+//        filterMap.put(&quot;/user/update&quot;,&quot;authc&quot;);
+//        上面两种写法等效于   可以采用通配符
+        filterMap.put(&quot;/user/*&quot;,&quot;authc&quot;);
+        bean.setFilterChainDefinitionMap(filterMap);
+
+        //如果没有权限
+        bean.setLoginUrl(&quot;/tologin&quot;);
+        return bean;
+
+    }</code></pre><h2 id="登录认证"><a href="#登录认证" class="headerlink" title="登录认证"></a>登录认证</h2><ul>
+<li>创建登录页面</li>
+</ul>
+<pre><code>```JavaScript
+&lt;p th:text=&quot;${msg}&quot; style=&quot;color: red&quot;&gt;&lt;/p&gt;
+&lt;form th:action=&quot;@{/login}&quot;&gt;
+    &lt;p&gt;用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;密码：&lt;input type=&quot;text&quot; name=&quot;password&quot;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+```</code></pre><ul>
+<li><p>登录方法</p>
+<pre><code>   @RequestMapping(&quot;/login&quot;)
+     public String login(String username,String password,Model model){
+         //获取当前的用户
+         Subject subject = SecurityUtils.getSubject();
+         //封装用户的登录数据
+         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+         try {
+             subject.login(token); //执行登录方法  如果没有异常就说明登录成功
+             return &quot;index&quot;;
+         }catch (UnknownAccountException e){ //用户名不存在
+             model.addAttribute(&quot;msg&quot;,&quot;用户名不存在&quot;);
+             return &quot;login&quot;;
+         }catch (IncorrectCredentialsException e){//密码错误异常
+             model.addAttribute(&quot;msg&quot;,&quot;密码错误&quot;);
+             return &quot;login&quot;;
+         }
+
+     }</code></pre></li>
+<li><p>官方举例的常见的异常类型</p>
+<pre><code>  try {
+     currentUser.login( token );
+     //if no exception, that&#39;s it, we&#39;re done!
+ } catch ( UnknownAccountException uae ) {  //用户名不存在
+     //username wasn&#39;t in the system, show them an error message?
+ } catch ( IncorrectCredentialsException ice ) {  //密码错误
+     //password didn&#39;t match, try again?
+ } catch ( LockedAccountException lae ) {   //账号被锁
+     //account for that username is locked - can&#39;t login.  Show them a message?
+ }
+     ... more types exceptions to check if you want ...
+ } catch ( AuthenticationException ae ) { 
+     //unexpected condition - error?
+ }</code></pre></li>
+<li><p>登录认证，<code>这里采用假的用户名和密码进行测试</code></p>
+<pre><code>   //认证
+     @Override
+     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+         System.out.println(&quot;执行了认证》doGetAuthenticationInfo&quot;);
+
+         //获取当前的用户
+         Subject subject = SecurityUtils.getSubject();
+         //用户名，密码
+         String name = &quot;root&quot;;
+         String password = &quot;123&quot;;
+         UsernamePasswordToken userToken = (UsernamePasswordToken) token;
+         if (!userToken.getUsername().equals(name)){
+             return null; //抛出异常，UnknownAccountException 用户名不存在异常
+         }
+         //密码认证  shiro自己做
+         return new SimpleAuthenticationInfo(&quot;&quot;,password,&quot;root&quot;);
+     }</code></pre></li>
+<li><p>当输入用户名不存在时<br><img src="https://img-blog.csdnimg.cn/20210606162823827.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="用户名不存在"></p>
+</li>
+<li><p>测试用户名密码不正确<br><img src="https://img-blog.csdnimg.cn/20210606162900548.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="密码错误"></p>
+</li>
+<li><p>测试成功结果<br><img src="https://img-blog.csdnimg.cn/20210606162926812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="测试成功结果"></p>
+<h2 id="连接数据库进行操作"><a href="#连接数据库进行操作" class="headerlink" title="连接数据库进行操作"></a>连接数据库进行操作</h2></li>
+<li><p>采用MybatisPlus对数据库进行查询</p>
+</li>
+<li><p>数据库表设置Users<br><img src="https://img-blog.csdnimg.cn/20210606170713458.png" alt="数据库表"></p>
+</li>
+<li><p>修改认证方法</p>
+</li>
+</ul>
+<pre><code>```
+  //认证
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+        System.out.println(&quot;执行了认证》doGetAuthenticationInfo&quot;);
+
+        //获取当前的用户
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken userToken = (UsernamePasswordToken) token;
+        //从数据库中查询用户名，密码
+        Users byUsername = usersService.findByUsername(userToken.getUsername());
+        if (byUsername==null){
+            return null;  //抛出用户不存在异常
+        }
+        //密码认证  shiro自己做
+        return new SimpleAuthenticationInfo(&quot;&quot;,byUsername.getPwd(),&quot;root&quot;);
+    }
+```</code></pre><h2 id="注销登录"><a href="#注销登录" class="headerlink" title="注销登录"></a>注销登录</h2><pre><code>@RequestMapping(&quot;/logout&quot;)
+    public String logout(){
+        //获取当前的用户
+        Subject subject = SecurityUtils.getSubject();
+//        设置退出登录
+        subject.logout();
+        return &quot;login&quot;;
+    }</code></pre><h2 id="权限操作"><a href="#权限操作" class="headerlink" title="权限操作"></a>权限操作</h2><ul>
+<li><p>给数据库表添加权限字段<br><img src="https://img-blog.csdnimg.cn/20210606181049434.png" alt="数据库表"></p>
+</li>
+<li><p>设置页面权限</p>
+<pre><code>  //授权 ,没有权限会跳转到位置页面
+         filterMap.put(&quot;/user/add&quot;,&quot;perms[user:add]&quot;);
+         filterMap.put(&quot;/user/update&quot;,&quot;perms[user:update]&quot;);</code></pre><p> <strong>注意这里的设置权限的代码需要放在设置拦截之前才有效</strong></p>
+</li>
+<li><p>从数据库中查询用户权限，赋予权限</p>
+</li>
+</ul>
+<pre><code>  //授权
+    @Override
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        System.out.println(&quot;执行了授权=》doGetAuthorizationInfo&quot;);
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        //获取当前登录用户
+        Subject subject = SecurityUtils.getSubject();
+        Users currentUser = (Users) subject.getPrincipal();//拿到User对象
+        //从数据库中获取当前的权限，然后赋予当前用户的权限
+        info.addStringPermission(currentUser.getPerms());
+        return info;
+    }</code></pre><ul>
+<li>演示</li>
+</ul>
+<p>[video(video-ojR2qGmz-1622977070277)(type-bilibili)(url-<a href="https://player.bilibili.com/player.html?aid=973483603)(image-https://ss.csdn.net/p?http://i1.hdslb.com/bfs/archive/1a4f7ee1e155c87ce249ff6f6982278160a880d1.jpg)(title-shiro权限演示)]" target="_blank" rel="noopener">https://player.bilibili.com/player.html?aid=973483603)(image-https://ss.csdn.net/p?http://i1.hdslb.com/bfs/archive/1a4f7ee1e155c87ce249ff6f6982278160a880d1.jpg)(title-shiro权限演示)]</a></p>
+<h2 id="shiro与thymeleaf整合"><a href="#shiro与thymeleaf整合" class="headerlink" title="shiro与thymeleaf整合"></a>shiro与thymeleaf整合</h2><ul>
+<li><p>实现目标</p>
+<p> 实现root用户登录之后只能看到add按钮<br> lisi用户登录之后只能看见update按钮</p>
+</li>
+</ul>
+<ul>
+<li>导包</li>
+</ul>
+<pre><code>```
+&lt;!--        shiro-thymeleaf--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.github.theborakompanioni&lt;/groupId&gt;
+        &lt;artifactId&gt;thymeleaf-extras-shiro&lt;/artifactId&gt;
+        &lt;version&gt;2.0.0&lt;/version&gt;
+    &lt;/dependency&gt;
+```</code></pre><ul>
+<li>在ShiroConfig中加入新配置</li>
+</ul>
+<pre><code>```
+ //整合ShiroDialect:用于整合Thymeleaf和shiro
+    @Bean
+    public ShiroDialect getShiroDialect(){
+        return new ShiroDialect();
+    }
+```</code></pre><ul>
+<li><p>在html中引入命名空间</p>
+<pre><code>  &lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;
+       xmlns:shiro=&quot;http://www.thymeleaf.org/thymeleaf-extras-shiro&quot;&gt;</code></pre></li>
+<li><p>html代码</p>
+<pre><code>  &lt;h1&gt;首页&lt;/h1&gt;
+
+ &lt;a th:href=&quot;@{/tologin}&quot;&gt;登录&lt;/a&gt;
+ &lt;hr&gt;
+ &lt;div shiro:hasPermission=&quot;user:add&quot;&gt;
+ &lt;a th:href=&quot;@{/user/add}&quot;&gt;add&lt;/a&gt;
+ &lt;/div&gt;|
+ &lt;div shiro:hasPermission=&quot;user:update&quot;&gt;
+     &lt;a th:href=&quot;@{/user/update}&quot;&gt;update&lt;/a&gt;
+ &lt;/div&gt;</code></pre></li>
+<li><p>结果<br><img src="https://img-blog.csdnimg.cn/20210606184344519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="结果"></p>
+</li>
+</ul>
+<h3 id="登陆之后隐藏登录按钮"><a href="#登陆之后隐藏登录按钮" class="headerlink" title="登陆之后隐藏登录按钮"></a>登陆之后隐藏登录按钮</h3><ul>
+<li>第一种方法使用shiro标签</li>
+</ul>
+<pre><code> &lt;div shiro:guest=&quot;true&quot;&gt;&lt;a th:href=&quot;@{/tologin}&quot;&gt;登录&lt;/a&gt;&lt;/div&gt;</code></pre><ul>
+<li>第二种方法设置session</li>
+</ul>
+<pre><code>   //获取登录对象
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession();
+        session.setAttribute(&quot;loginUser&quot;,byUsername);</code></pre><p>前端页面</p>
+<pre><code>&lt;div th:if=&quot;session.loginUser==null&quot;&gt;&lt;a th:href=&quot;@{/tologin}&quot;&gt;登录&lt;/a&gt;&lt;/div&gt;</code></pre><ul>
+<li>显示效果<br><img src="https://img-blog.csdnimg.cn/20210606185114673.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDE3Mjc2,size_16,color_FFFFFF,t_70" alt="显示效果"><h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><a href="https://gitee.com/godchin/springboot_shiro" target="_blank" rel="noopener">码云地址</a><br>如果帮到了你，请个start支持下</li>
+</ul>
+
             </div>
             <hr />
 
@@ -684,9 +969,9 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《ARM架构使用Docker部署的坑》
+                    《SpringBoot集成Shiro》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/07/30/arm-xi-tong-shi-yong-docker-bu-shu-de-keng/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/07/springboot-ji-cheng-shiro/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -727,7 +1012,7 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
         repo: 'godweiyang.github.io',
         owner: 'godweiyang',
         admin: "godweiyang",
-        id: '2020/07/30/arm-xi-tong-shi-yong-docker-bu-shu-de-keng/',
+        id: '2021/06/07/springboot-ji-cheng-shiro/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1010,41 +1295,43 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/30/springboot-re-bu-shu-shi-bai-jie-jue-fang-an/">
+                <a href="/2021/06/07/springboot-ji-cheng-shiro/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="SpringBoot热部署失败解决方案">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="SpringBoot集成Shiro">
                         
-                        <span class="card-title">SpringBoot热部署失败解决方案</span>
+                        <span class="card-title">SpringBoot集成Shiro</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            springboot热部署失败问题解决
+                            本文介绍如何使用SpringBoot集成Shiro
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/项目部署/" class="post-category" target="_blank">
-                                    项目部署
+                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                                    SpringBoot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1052,8 +1339,8 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/项目部署/" target="_blank">
-                        <span class="chip bg-color">项目部署</span>
+                    <a href="/tags/Shiro/" target="_blank">
+                        <span class="chip bg-color">Shiro</span>
                     </a>
                     
                 </div>
@@ -1067,31 +1354,31 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/30/oracle-shu-ju-ku/">
+                <a href="/2021/05/12/java-duo-xian-cheng-chuang-jian-fang-shi-yi-ji-xian-cheng-an-quan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Oracle数据库笔记">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="java多线程创建方式以及线程安全">
                         
-                        <span class="card-title">Oracle数据库笔记</span>
+                        <span class="card-title">java多线程创建方式以及线程安全</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文主要介绍Oracle的一些基本知识。
+                            本文主要介绍多线程的一些知识。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Oracle数据库/" class="post-category" target="_blank">
-                                    Oracle数据库
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
                                 </a>
                             
                             
@@ -1105,8 +1392,8 @@ ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;demo.jar&quot;]
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/数据库/" target="_blank">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/多线程/" target="_blank">
+                        <span class="chip bg-color">多线程</span>
                     </a>
                     
                 </div>
