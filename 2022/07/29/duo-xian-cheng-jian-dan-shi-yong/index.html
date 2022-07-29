@@ -4,16 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker安装Redis, 123">
+    <meta name="keywords" content="多线程简单实用, 123">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="docker安装redis
-docker pull redis 拉取镜像拉取docker镜像
-获取redis.conf文件
+    <meta name="description" content="多线程优化多任务处理
+常见的for循环写法package itdfq.optimizationfor;
 
-    # bind 192.168.1.100 10.0.0.1
-    # bind 127.0.0.1 ::">
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+impo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +22,7 @@ docker pull redis 拉取镜像拉取docker镜像
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Docker安装Redis | God-Chin的博客</title>
+    <title>多线程简单实用 | God-Chin的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -331,13 +332,13 @@ docker pull redis 拉取镜像拉取docker镜像
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Docker安装Redis
+                        多线程简单实用
                     </div>
                 </div>
             </div>
@@ -460,8 +461,8 @@ docker pull redis 拉取镜像拉取docker镜像
                             <span class="chip bg-color">原创</span>
                         </a>
                         
-                        <a href="/tags/docker/" target="_blank">
-                            <span class="chip bg-color">docker</span>
+                        <a href="/tags/ThreadPoolExecutor/" target="_blank">
+                            <span class="chip bg-color">ThreadPoolExecutor</span>
                         </a>
                         
                     </div>
@@ -472,8 +473,8 @@ docker pull redis 拉取镜像拉取docker镜像
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="post-category" target="_blank">
-                            软件安装
+                        <a href="/categories/java/" class="post-category" target="_blank">
+                            java
                         </a>
                         
                     </div>
@@ -498,7 +499,7 @@ docker pull redis 拉取镜像拉取docker镜像
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    389
+                    382
                 </div>
                 
 
@@ -521,120 +522,102 @@ docker pull redis 拉取镜像拉取docker镜像
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="docker安装redis"><a href="#docker安装redis" class="headerlink" title="docker安装redis"></a>docker安装redis</h2><ol>
-<li>docker pull redis 拉取镜像<br>拉取docker镜像</li>
-<li>获取redis.conf文件</li>
-</ol>
-<pre class="line-numbers language-shell"><code class="language-shell">    # bind 192.168.1.100 10.0.0.1
-    # bind 127.0.0.1 ::1
-    #bind 127.0.0.1
-    
-    protected-mode no
-    
-    port 6379
-    
-    tcp-backlog 511
-    
-    requirepass 000415
-    
-    timeout 0
-    
-    tcp-keepalive 300
-    
-    daemonize no
-    
-    supervised no
-    
-    pidfile /var/run/redis_6379.pid
-    
-    loglevel notice
-    
-    logfile ""
-    
-    databases 30
-    
-    always-show-logo yes
-    
-    save 900 1
-    save 300 10
-    save 60 10000
-    
-    stop-writes-on-bgsave-error yes
-    
-    rdbcompression yes
-    
-    rdbchecksum yes
-    
-    dbfilename dump.rdb
-    
-    dir ./
-    
-    replica-serve-stale-data yes
-    
-    replica-read-only yes
-    
-    repl-diskless-sync no
-    
-    repl-disable-tcp-nodelay no
-    
-    replica-priority 100
-    
-    lazyfree-lazy-eviction no
-    lazyfree-lazy-expire no
-    lazyfree-lazy-server-del no
-    replica-lazy-flush no
-    
-    appendonly yes
-    
-    appendfilename "appendonly.aof"
-    
-    no-appendfsync-on-rewrite no
-    
-    auto-aof-rewrite-percentage 100
-    auto-aof-rewrite-min-size 64mb
-    
-    aof-load-truncated yes
-    
-    aof-use-rdb-preamble yes
-    
-    lua-time-limit 5000
-    
-    slowlog-max-len 128
-    
-    notify-keyspace-events ""
-    
-    hash-max-ziplist-entries 512
-    hash-max-ziplist-value 64
-    
-    list-max-ziplist-size -2
-    
-    list-compress-depth 0
-    
-    set-max-intset-entries 512
-    
-    zset-max-ziplist-entries 128
-    zset-max-ziplist-value 64
-    
-    hll-sparse-max-bytes 3000
-    
-    stream-node-max-bytes 4096
-    stream-node-max-entries 100
-    
-    activerehashing yes
-    
-    hz 10
-    
-    dynamic-hz yes
-    
-    aof-rewrite-incremental-fsync yes
-    
-    rdb-save-incremental-fsync yes
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol start="3">
-<li><code>docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name myredis -v /usr/software/redis/redis.conf:/etc/redis/redis.conf -v /usr/software/redis/data:/data -d redis redis-server /etc/redis/redis.conf  --appendonly yes  --requirepass 密码</code><br>&#x2F;usr&#x2F;software&#x2F;redis&#x2F;redis.conf是服务器文件地址 映射到docker 容器内部的地址&#x2F;etc&#x2F;redis&#x2F;redis.conf<br>同理：挂载的数据盘：&#x2F;usr&#x2F;software&#x2F;redis&#x2F;data:&#x2F;data<br>–appendonly yes  –requirepass 密码  后台启动 设置密码</li>
-<li>启动是否成功可以通过 <code>docker logs</code> 容器名 进行查看</li>
-<li>进入容器并启动redis <code>docker exec -it myredis redis-cli</code></li>
-</ol>
+                <h2 id="多线程优化多任务处理"><a href="#多线程优化多任务处理" class="headerlink" title="多线程优化多任务处理"></a>多线程优化多任务处理</h2><hr>
+<h4 id="常见的for循环写法"><a href="#常见的for循环写法" class="headerlink" title="常见的for循环写法"></a>常见的for循环写法</h4><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> itdfq<span class="token punctuation">.</span>optimizationfor<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>alibaba<span class="token punctuation">.</span>fastjson<span class="token punctuation">.</span>JSON<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Random<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @author duanfangqin 2022/7/6 12:19
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ForDemo1</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        Random random <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Integer<span class="token operator">></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> startTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token keyword">int</span> i1 <span class="token operator">=</span> random<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"计算第"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">"次的结果："</span><span class="token operator">+</span>i1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>i1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">toJSONString</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> endTime <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"消耗的时间："</span><span class="token operator">+</span><span class="token punctuation">(</span>endTime<span class="token operator">-</span>startTime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//        [9,0,6,2,7,2,2,7,5,2]</span>
+<span class="token comment" spellcheck="true">//        消耗的时间：50139</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="多线程处理"><a href="#多线程处理" class="headerlink" title="多线程处理"></a>多线程处理</h4><pre><code>
+```java
+package itdfq.optimizationfor;
+
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.*;
+
+/**
+ * @author duanfangqin 2022/7/6 12:26
+ */
+public class ForDemo2 &#123;
+    public static void main(String[] args) &#123;
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(10,10,6, TimeUnit.SECONDS,new LinkedBlockingQueue&lt;&gt;(),new ThreadPoolExecutor.CallerRunsPolicy());
+        long startTime = System.currentTimeMillis();
+        List&lt;Integer&gt; list  = Collections.synchronizedList(new ArrayList&lt;&gt;());
+        List&lt;Future&gt; futureList = new ArrayList&lt;&gt;();
+        try &#123;
+            for (int i=0;i&lt;10;i++)&#123;
+                Future&lt;Integer&gt; submit =  pool.submit(()-&gt;&#123;
+                    try &#123;
+                       Random random =  new Random();
+                        int i1 = random.nextInt(10);
+
+                        Thread.sleep(5000);
+                        list.add(i1);
+                       return i1;
+                    &#125; catch (InterruptedException e) &#123;
+                        e.printStackTrace();
+                    &#125;
+                    return null;
+                &#125;);
+                futureList.add(submit);
+            &#125;
+            for (Future future : futureList)&#123;
+                try &#123;
+                    Integer o = (Integer) future.get(6, TimeUnit.SECONDS);
+                &#125; catch (InterruptedException e) &#123;
+                    e.printStackTrace();
+                &#125; catch (ExecutionException e) &#123;
+                    e.printStackTrace();
+                &#125; catch (TimeoutException e) &#123;
+                    e.printStackTrace();
+                &#125;
+            &#125;
+            System.out.println(JSON.toJSONString(list));
+            long endTime = System.currentTimeMillis();
+            System.out.println(&quot;消耗的时间：&quot;+(endTime-startTime));
+        &#125; catch (Exception e) &#123;
+            e.printStackTrace();
+        &#125;finally &#123;
+            pool.shutdown();
+        &#125;
+
+    &#125;
+&#125;
+</code></pre>
 
             </div>
             <hr />
@@ -793,9 +776,9 @@ docker pull redis 拉取镜像拉取docker镜像
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Docker安装Redis》
+                    《多线程简单实用》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2022/07/29/docker-an-zhuang-redis/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2022/07/29/duo-xian-cheng-jian-dan-shi-yong/" property="cc:attributionName"
                rel="cc:attributionURL">
                 duan
             </a> 采用
@@ -836,7 +819,7 @@ docker pull redis 拉取镜像拉取docker镜像
         repo: 'itdfq.github.io',
         owner: 'itdfq',
         admin: "itdfq",
-        id: '2022/07/29/docker-an-zhuang-redis/',
+        id: '2022/07/29/duo-xian-cheng-jian-dan-shi-yong/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -857,9 +840,10 @@ docker pull redis 拉取镜像拉取docker镜像
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/07/29/duo-xian-cheng-jian-dan-shi-yong/">
                     <div class="card-image">
@@ -877,9 +861,9 @@ docker pull redis 拉取镜像拉取docker镜像
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -892,6 +876,7 @@ docker pull redis 拉取镜像拉取docker镜像
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -914,31 +899,31 @@ docker pull redis 拉取镜像拉取docker镜像
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/24/http-jie-kou-jia-mi-jie-mi-de-zhu-jie-shi-xian-gong-ju/">
+                <a href="/2022/07/29/docker-an-zhuang-redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="http接口加密解密的注解实现工具">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Docker安装Redis">
                         
-                        <span class="card-title">http接口加密解密的注解实现工具</span>
+                        <span class="card-title">Docker安装Redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            http接口加密解密的注解实现工具
+                            本文介绍如何使用docker安装Redis，并挂载数据板
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-02-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-07-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category" target="_blank">
-                                    java
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" class="post-category" target="_blank">
+                                    软件安装
                                 </a>
                             
                             
@@ -952,8 +937,8 @@ docker pull redis 拉取镜像拉取docker镜像
                         <span class="chip bg-color">原创</span>
                     </a>
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/" target="_blank">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="https://github.com/itdfq/itdfq.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/itdfq/itdfq.github.io/"/>
-  <updated>2022-07-29T03:50:58.413Z</updated>
+  <updated>2022-07-29T07:32:09.970Z</updated>
   <id>https://github.com/itdfq/itdfq.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程简单实用</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/07/29/duo-xian-cheng-jian-dan-shi-yong/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/07/29/duo-xian-cheng-jian-dan-shi-yong/</id>
+    <published>2022-07-29T07:15:52.000Z</published>
+    <updated>2022-07-29T07:32:09.970Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;多线程优化多任务处理&quot;&gt;&lt;a href=&quot;#多线程优化多任务处理&quot; class=&quot;headerlink&quot; title=&quot;多线程优化多任务处理&quot;&gt;&lt;/a&gt;多线程优化多任务处理&lt;/h2&gt;&lt;hr&gt;
+&lt;h4 id=&quot;常见的for循环写法&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+    <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="ThreadPoolExecutor" scheme="https://github.com/itdfq/itdfq.github.io/tags/ThreadPoolExecutor/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker安装Redis</title>
@@ -547,36 +575,6 @@
     <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
     
     <category term="docker" scheme="https://github.com/itdfq/itdfq.github.io/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mybatis逆向工程</title>
-    <link href="https://github.com/itdfq/itdfq.github.io/2020/09/22/mybatis-ni-xiang-gong-cheng/"/>
-    <id>https://github.com/itdfq/itdfq.github.io/2020/09/22/mybatis-ni-xiang-gong-cheng/</id>
-    <published>2020-09-22T09:36:32.000Z</published>
-    <updated>2022-07-29T03:34:43.386Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;h2 id=&quot;逆向工程所依赖的jar包&quot;&gt;&lt;a href=&quot;#逆向工程所依赖的jar包&quot; class=&quot;headerlink&quot; title=&quot;逆向工程所依赖的jar包&quot;&gt;&lt;/a&gt;逆向工程所依赖的jar包&lt;/h2&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="数据库" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-    <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
-    
-    <category term="逆向工程" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
     
   </entry>
   

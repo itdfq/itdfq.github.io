@@ -1,3 +1,4 @@
+https://github.com/itdfq/itdfq.github.io/2022/07/29/duo-xian-cheng-jian-dan-shi-yong/
 https://github.com/itdfq/itdfq.github.io/2022/07/29/docker-an-zhuang-redis/
 https://github.com/itdfq/itdfq.github.io/2022/02/24/http-jie-kou-jia-mi-jie-mi-de-zhu-jie-shi-xian-gong-ju/
 https://github.com/itdfq/itdfq.github.io/2022/02/24/ji-yu-redisson-de-fen-bu-shi-suo-zhu-jie-gong-ju/
