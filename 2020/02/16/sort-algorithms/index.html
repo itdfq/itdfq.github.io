@@ -1,0 +1,1922 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="MySql语法知识, 123">
+    <meta name="baidu-site-verification" content="fmlEuI34ir" />
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
+    <meta name="description" content="DDL:一 数据库的使用：
+                    mysql -uroot -p123456 登录数据库
+                    show databases 查看所有的数据库
+              ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>MySql语法知识 | God-Chin的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="God-Chin的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">God-Chin的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">God-Chin的博客</div>
+        <div class="logo-desc">
+            
+            JAVA
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/itdfq" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/itdfq" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        MySql语法知识
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    /* .toc-widget {
+        padding-left: 20px;
+    } */
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/%E5%8E%9F%E5%88%9B/" target="_blank">
+                            <span class="chip bg-color">原创</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank">
+                            <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" target="_blank">
+                            mysql数据库
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-16
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    duan
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    26 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL:"></a>DDL:</h1><pre><code>一 数据库的使用：
+                    mysql -uroot -p123456 登录数据库
+                    show databases 查看所有的数据库
+                    create database 数据库名字    添加数据库
+                    create database if not exists +数据库名字 character set +所用字节 ；创建数据库如果不存在并设置字符格式
+                    alter database +数据库名字 character set 字符集名称；修改数据库字符
+                    select database();查询正在使用的数据库名称
+                    use +数据库名字；
+二 操作表
+            1.创建
+                        &lt;1&gt;.语法：
+                                create table 表名（
+                                            列名1  数据类型，
+                                            列名2  数据类型，
+                                            .......
+                                            列名n  数据类型
+                                ）；
+                                注意：最后一个列名不用加逗号
+                        &lt;2&gt;.数据库类型 
+                                    1. int ：整数类型
+                                    2. double :小数类型
+                                    3. date : 日期 ，只包含年月日，yyyy-mm-dd
+                                    4. datetime :日期 ，包含年月日时分秒 yyyy-MM-dd  HH-mm-ss
+                                    5. timestamp : 时间错类型  包含年月日时分秒  yyyy-MM-dd HH-mm-ss(系统会自己输进去当前时间)
+                                    6.varchar :字符串
+                                        例如   name varchar(20):姓名最大20个字符
+            2.查询
+                        &lt;1&gt; show tables;查询数据库中所有的表名称
+                        &lt;2&gt; desc +表名;查询表结构 
+                        &lt;3&gt;show create table 表名;查询表的字符集
+            3.修改
+                        &lt;1&gt;修改表名
+                                alter table 表名 rename to 新表名
+                        &lt;2&gt;修改字符集
+                                alter table stu character set 字符集的名称;
+                        &lt;3&gt;添加一列
+                                alter table 表名 add 列名 数据类型；
+                        &lt;4&gt;修改列名称
+                                &lt;1&gt; alter table 表名 change列名  新列名  设置类型;
+                                &lt;2&gt; alter table 表名 modify 列名       varchar(10);		
+            4.删除
+                        drop +表名   ；   删除表
+                        alter table 表名 drop 被删除的列名;  删除列
+            5.复制
+                        create table stu(新创建的) like student（被复制的）;
+                        
+                        
+                    
+</code></pre>
+<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><ol>
+<li>所查询字段 + like ‘%段%’<br>eg:select * from user where realname like ‘%段%’</li>
+<li>所查询字段 + like ‘%段%’ and 所查询字段 + like ‘%飞%’<br>eg: select * from user where realname like ‘%段%’ and realname like ‘%飞%’</li>
+<li>查询出既含有“段”同时又有“飞”的所有记录<br>select * from user where realname like ‘%段%飞%’</li>
+</ol>
+<h2 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h2><p>select * from 表名<br>order by 列名 asc ; 升序</p>
+<p>select * from 表名<br>order by 列名 desc ; 降序</p>
+<h2 id="DML-增删改表中的数据"><a href="#DML-增删改表中的数据" class="headerlink" title="DML:增删改表中的数据"></a>DML:增删改表中的数据</h2><pre><code>    1.添加数据
+                insert into 表名（列名1，列名2，列名n） values(值1，值2,....值n);
+            注意：列名要与值一一对应
+                        如果表名后，不定义列名，则默认给所有列添加值
+                        除了数字类型，其他类型需要引号单引号和双引号都可以  日期格式：“1893-11-11”
+    2.删除数据：
+                1.delete from 表名 [where  条件]   
+                        例如：  DELETE FROM stu WHERE id =1;
+                        注意：如果不添加条件  会删除表中所有记录
+                2.truncate table stu ;   删除表中所有记录  ----先删除表在创建一张一样的表。
+    3.修改数据:
+                1.updata 表名 set 列名1= 值1 ，列名2= 值2 ，...[where 条件]
+                        例如:  UPDATE stu SET age=117 WHERE id =3;
+                        注意 ：如果不添加条件 会修改表中所有元素
+</code></pre>
+<h2 id="DQL-”查询表中的记录-select-from-表名"><a href="#DQL-”查询表中的记录-select-from-表名" class="headerlink" title="DQL:”查询表中的记录 select * from 表名;"></a>DQL:”查询表中的记录 select * from 表名;</h2><pre><code>    1.排序查询：
+            order by 字句
+                *order by 排序字段1 排序方式1 ，排序字段2 排序方式2 ....
+            例如：
+                        SELECT * FROM stu1 ORDER BY math +排序方式 
+                        SELECT * FROM stu1 ORDER BY math DESC, english DESC;（多组排序）
+            排序方式	：	ASC:升序，默认
+                                DESC:降序
+    2.聚合函数：将一列数据作为一个整体，进行纵向的计算。
+                    &lt;1&gt; count : 计算个数
+                                    (1)select count(列名) from 表名；
+                                    (2)select count（ifnull（列名，0）） from 表名；
+                                    (3)count（*）; 选择所有的列
+                    &lt;2&gt; max  : 计算最大值
+                                    (1)SELECT MAX(列名) FROM 表名;
+                    &lt;3&gt; min  :  计算最小值
+                                    (1)SELECT MIN(列名) FROM 表名;
+                    &lt;4&gt; sum  :  计算和
+                                    (1)SELECT SUM(列名) FROM 表名;
+                    &lt;5&gt; avg  :   计算平均值
+                                    (1)SELECT AVG(列名) FROM 表名;
+                            注意：聚合函数的计算，排除null值。
+                            解决：
+                                    1.选择不包含非空的列
+                                    2.	ifnull函数
+    3.分组查询：
+            &lt;1&gt;  group by 分组字段 
+                        SELECT FROM 表名 GROUP BY 列名;
+                    注意：
+                        1.分组之后查询的字段：分组字段  聚合函数
+                                SELECT sex, AVG(math) FROM stu1 GROUP BY sex;
+                                SELECT sex, AVG(math),COUNT(id) FROM stu1 GROUP BY sex;可以多加一些聚合函数
+                        2where和having的区别：
+                                1.where在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不进行限定，则不会查询。
+                                2.where后不可以跟聚合函数，having可以进行聚合函数的判断。
+    4.分页查询：
+            1.语法：limit 开始的索引，每条查询的页数。
+                    SELECT * FROM 表名 LIMIT 索引，所查询的页数;
+                    SELECT * FROM stu1 LIMIT 0,3;--第一页
+                    SELECT * FROM stu1 LIMIT 3,3;--第二页;
+                开始的索引=（当前页码 - 1）*每页显示的条数
+            
+        注意：每个数据库都有独特的分页方式
+</code></pre>
+<h1 id="约束："><a href="#约束：" class="headerlink" title="约束："></a>约束：</h1><pre><code>    概念：对表中的数据进行限定，保证数据的正确性，有效性和完整性。
+    分类：
+        1.主键约束：primary key
+        2.非空约束：not null
+        3.唯一约束：unique
+        4.外键约束：foreign key
+    #非空约束：not null:
+            1.建表时添加非空约束：
+                    CREATE TABLE stu3(
+                                id INT,
+                                NAME VARCHAR(20) NOT NULL
+                    );
+            2.创建表完后，添加非空约束
+            3.删除非空约束：ALTER TABLE stu3 MODIFY NAME VARCHAR(20);
+    #唯一约束：unique ，值不能重复
+            1.添加唯一约束：
+                    CREATE TABLE stu3(
+                                        id INT,
+                                        NAME VARCHAR(20)  unique
+                            );
+            2.删除唯一约束：
+                    AlTER TABLE STU3 DROP INDEX NAME;
+            3.再创建表后，添加唯一约束:
+                    ALTER TABLE stu2 MODIFY phonenumber VARCHAR(20) UNIQUE;
+    #主键约束：primary key:
+            1.创建表示添加主键：
+                            CREATE TABLE stu4(
+                                        id INT PRIMARY KEY,
+                                        NAME VARCHAR(20)
+                                        
+                            );
+            2.删除主键：
+                    ALTER TABLE stu4 DROP PRIMARY KEY;
+            3.创建完表后，添加主键：
+                    ALTER TABLE stu4 MODIFY id INT PRIMARY KEY;
+            4.自动增长：
+                    1.概念：如果谋一列是数值类型的，使用auto_increment 可以来完成值得自动增长
+                    2.在创建表时，添加主键约束，并且完成主键自增长
+                            CREATE TABLE stu4(
+                                    id INT PRIMARY KEY AUTO_INCREMENT,
+                                    NAME VARCHAR(20)
+                            );
+                            INSERT INTO stu4 VALUES(NULL ,&quot;ccc&quot;);
+                                    之后不需要再添加元素，会自动添加
+                    3.删除自动增长：
+                            ALTER TABLE stu4 MODIFY id INT;
+    #外键约束：foreign key：
+            1.在创建表时，可以添加外键
+                    *语法：
+                            create  table 表名(
+                                ...
+                                外键列
+                                constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称)
+                            );
+                    例子：
+                                        CREATE TABLE department(
+                                            id INT PRIMARY KEY AUTO_INCREMENT,
+                                            dep_name VARCHAR(20),
+                                            dep_locationion VARCHAR(20)
+                                        );
+                                        CREATE TABLE employee(
+                                            id INT PRIMARY KEY AUTO_INCREMENT,
+                                            NAME VARCHAR(20),
+                                            age INT,
+                                            dep_id INT,
+                                            CONSTRAINT emp_dep FOREIGN KEY (dep_id) REFERENCES department(id)
+                                        );
+                                        INSERT INTO department VALUES(NULL,&#39;研发部&#39;,&#39;广州&#39;),(NULL,&quot;销售部&quot;,&quot;深圳&quot;);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;张三&quot;,20,1);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;李四&quot;,21,1);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;王五&quot;,22,1);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;大王&quot;,215,2);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;小王&quot;,24,2);
+                                        INSERT INTO employee (NAME,age,dep_id) VALUE (&quot;老王&quot;,26,2);
+                                        SELECT * FROM employee;
+                                        SELECT * FROM department;
+            2.删除外键：
+                    Alter table  表名 drop foreign key 外键名称；
+                        例子：ALTER TABLE employee DROP FOREIGN KEY emp_dep;
+            3. 创建表之后，添加外键
+                    &lt;1&gt;ALTER table 表名 add constraint 外键名称 foreign key (外键字段名称) peferences  主表列名称；
+                    
+            4.级联操作
+                    1. 添加级联操作
+                    语法：ALTER TABLE 表名 ADD CONSTRAINT 外键名称 
+                                FOREIGN KEY (外键字段名称) REFERENCES 主表名称(主表列名称) ON UPDATE CASCADE ON DELETE CASCADE  ;
+                                例如：ALTER TABLE employee ADD CONSTRAINT  emp_dep FOREIGN KEY
+                                            (dep_id) REFERENCES department(id) ON UPDATE CASCADE ;
+
+                    2. 分类：
+                                1. 级联更新：ON UPDATE CASCADE 
+                                2. 级联删除：ON DELETE CASCADE 
+</code></pre>
+<h2 id="数据库的设计："><a href="#数据库的设计：" class="headerlink" title="数据库的设计："></a>数据库的设计：</h2><pre><code>            1.多表之间的关系
+                1.分类
+                    &lt;1&gt;一对一：例如：人与身份证
+                    &lt;2&gt;一对多（多对一）：例如：部门与员工
+                    &lt;3&gt;多对多：学生与课程的关系
+                2.实现关系：
+                    &lt;1&gt;一对多：（多对一）：
+                            在多的一方建立外键，指向一的一方的主键。
+                    &lt;2&gt;多对多：
+                            多对多关系实现是需要借助第三张中间表。至少包含两个字段，
+                            这两个字段作为第三张表的外键，分别指向两张表的主键
+                    &lt;3&gt;一对一：
+                            可以在任意一方添加外键指向另一方的主键
+                3.演示：
+                            CREATE TABLE tab_category(
+                                    cid INT PRIMARY KEY AUTO_INCREMENT,
+                                    cname VARCHAR(100) NOT NULL UNIQUE
+                            );
+                            CREATE TABLE tab_toute(
+                                            rid INT PRIMARY KEY AUTO_INCREMENT,
+                                            rname VARCHAR(100) NOT NULL UNIQUE,
+                                            price DOUBLE,
+                                            rdate DATE,
+                                            cid INT,
+                                            FOREIGN KEY(cid) REFERENCES tab_category(cid)
+                            );
+                            CREATE TABLE tab_user(
+                                        uid INT PRIMARY KEY AUTO_INCREMENT,
+                                        username VARCHAR(100) UNIQUE NOT NULL,
+                                        PASSWORD VARCHAR(30) NOT NULL,
+                                        NAME VARCHAR(100),
+                                        birthday DATE,
+                                        sex CHAR(1) DEFAULT &#39;男&#39;,
+                                        telephone VARCHAR(11),
+                                        email VARCHAR(100)
+                            );
+                            CREATE TABLE tab_favorite(
+                                        rid INT,
+                                        DATE DATETIME,
+                                        uid INT,  
+                                        PRIMARY KEY(rid,uid),
+                                        FOREIGN KEY (rid) REFERENCES tab_toute(rid),
+                                        FOREIGN KEY (uid) REFERENCES tab_user(uid)
+                            );
+
+            2.数据库设计的范式
+                    概念：	设计关系数据库时，遵从不同的规范要求，
+                                设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，
+                                各种范式呈递次规范，越高的范式数据库冗余越小
+                    类型：第一范式（1NF） 第二范式(2NF) 第三范式(3NF) 巴斯-科德范式（BCNF）
+                            第四范式（4NF） 和第五范式（5NF 又称为完美范式）
+                    
+                        1. 第一范式（1NF）：每一列都是不可分割的原子数据项
+                        2. 第二范式（2NF）：在1NF的基础上，非码属性必须完全依赖于码（在1NF基础上消除非主属性对主码的部分函数依赖）
+                            * 几个概念：
+                                1. 函数依赖：A--&gt;B,如果通过A属性(属性组)的值，可以确定唯一B属性的值。则称B依赖于A
+                                    例如：学号--&gt;姓名。  （学号，课程名称） --&gt; 分数
+                                2. 完全函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定需要依赖于A属性组中所有的属性值。
+                                    例如：（学号，课程名称） --&gt; 分数
+                                3. 部分函数依赖：A--&gt;B， 如果A是一个属性组，则B属性值得确定只需要依赖于A属性组中某一些值即可。
+                                    例如：（学号，课程名称） -- &gt; 姓名
+                                4. 传递函数依赖：A--&gt;B, B -- &gt;C . 如果通过A属性(属性组)的值，可以确定唯一B属性的值，在通过B属性（属性组）的值可以确定唯一C属性的值，则称 C 传递函数依赖于A
+                                    例如：学号--&gt;系名，系名--&gt;系主任
+                                5. 码：如果在一张表中，一个属性或属性组，被其他所有属性所完全依赖，则称这个属性(属性组)为该表的码
+                                    例如：该表中码为：（学号，课程名称）
+                                    * 主属性：码属性组中的所有属性
+                                    * 非主属性：除过码属性组的属性
+                                    
+                        3. 第三范式（3NF）：在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）
+</code></pre>
+<h2 id="数据库的备份和还原"><a href="#数据库的备份和还原" class="headerlink" title="数据库的备份和还原"></a>数据库的备份和还原</h2><pre><code>                1. 命令行：
+                        * 语法：
+                            * 备份： mysqldump -u用户名 -p密码 数据库名称 &gt; 保存的路径
+                            * 还原：
+                                1. 登录数据库
+                                2. 创建数据库
+                                3. 使用数据库
+                                4. 执行文件。source 文件路径
+                2. 图形化工具：
+    
+    
+</code></pre>
+<h2 id="多表查询："><a href="#多表查询：" class="headerlink" title="多表查询："></a>多表查询：</h2><pre><code>            * 笛卡尔积：
+    * 有两个集合A,B .取这两个集合的所有组成情况。
+    * 要完成多表查询，需要消除无用的数据
+* 多表查询的分类：
+    1. 内连接查询：
+        1. 隐式内连接：使用where条件消除无用数据
+            * 例子：
+            -- 查询所有员工信息和对应的部门信息
+            SELECT * FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
+            -- 查询员工表的名称，性别。部门表的名称
+            SELECT emp.name,emp.gender,dept.name FROM em		
+            便捷写法：
+                    SELECT 
+                        t1.name, -- 员工表的姓名
+                        t1.gender,-- 员工表的性别
+                        t2.name -- 部门表的名称
+                    FROM
+                        emp(表名1) t1,
+                        dept(表名2) t2
+                    WHERE 
+                        t1.`dept_id` = t2.`id`;
+    2. 显式内连接：
+            * 语法： select 字段列表 from 表名1 [inner] join 表名2 on 条件
+            * 例如：
+                * SELECT * FROM emp INNER(可省略) JOIN dept ON emp.`dept_id` = dept.`id`;	
+                * SELECT * FROM emp JOIN dept ON emp.`dept_id` = dept.`id`;	
+    
+    3. 外链接查询：
+        1. 左外连接：
+            * 语法：select 字段列表 from 表1 left [outer] join 表2 on 条件；
+            * 查询的是左表所有数据以及其交集部分。
+            * 例子：
+                -- 查询所有员工信息，如果员工有部门，则查询部门名称，没有部门，则不显示部门名称
+                SELECT 	t1.*,t2.`name` FROM emp t1 LEFT JOIN dept t2 ON t1.`dept_id` = t2.`id`;
+        2. 右外连接：
+            * 语法：select 字段列表 from 表1 right [outer] join 表2 on 条件；
+            * 查询的是右表所有数据以及其交集部分。
+            * 例子：
+                SELECT * FROM dept t2 RIGHT JOIN emp t1 ON t1.`dept_id` = t2.`id`;
+*子查询：
+        * 概念：查询中嵌套查询，称嵌套查询为子查询。
+            -- 查询工资最高的员工信息
+            -- 1 查询最高的工资是多少 9000
+                SELECT MAX(salary) FROM emp;
+            
+            -- 2 查询员工信息，并且工资等于9000的
+                SELECT * FROM emp WHERE emp.`salary` = 9000;
+            
+            -- 一条sql就完成这个操作。子查询
+                SELECT * FROM emp WHERE emp.`salary` =  (SELECT MAX(salary) FROM emp);
+            2. 子查询的结果是多行单列的：
+                * 子查询可以作为条件，使用运算符in来判断
+                -- 查询&#39;财务部&#39;和&#39;市场部&#39;所有的员工信息
+                SELECT id FROM dept WHERE NAME = &#39;财务部&#39; OR NAME = &#39;市场部&#39;;
+                SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;
+                -- 子查询
+                SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = &#39;财务部&#39; OR NAME = &#39;市场部&#39;);
+
+            3. 子查询的结果是多行多列的：
+                * 子查询可以作为一张虚拟表参与查询
+                -- 查询员工入职日期是2011-11-11日之后的员工信息和部门信息
+                -- 子查询
+                SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp.`join_date` &gt; &#39;2011-11-11&#39;) t2
+                WHERE t1.id = t2.dept_id;
+                
+                -- 普通内连接
+                SELECT * FROM emp t1,dept t2 WHERE t1.`dept_id` = t2.`id` AND t1.`join_date` &gt;  &#39;2011-11-11&#39;
+            * 多表查询练习
+
+            -- 部门表
+            CREATE TABLE dept (
+              id INT PRIMARY KEY PRIMARY KEY, -- 部门id
+              dname VARCHAR(50), -- 部门名称
+              loc VARCHAR(50) -- 部门所在地
+            );
+            
+            -- 添加4个部门
+            INSERT INTO dept(id,dname,loc) VALUES 
+            (10,&#39;教研部&#39;,&#39;北京&#39;),
+            (20,&#39;学工部&#39;,&#39;上海&#39;),
+            (30,&#39;销售部&#39;,&#39;广州&#39;),
+            (40,&#39;财务部&#39;,&#39;深圳&#39;);
+            
+            
+            
+            -- 职务表，职务名称，职务描述
+            CREATE TABLE job (
+              id INT PRIMARY KEY,
+              jname VARCHAR(20),
+              description VARCHAR(50)
+            );
+            
+            -- 添加4个职务
+            INSERT INTO job (id, jname, description) VALUES
+            (1, &#39;董事长&#39;, &#39;管理整个公司，接单&#39;),
+            (2, &#39;经理&#39;, &#39;管理部门员工&#39;),
+            (3, &#39;销售员&#39;, &#39;向客人推销产品&#39;),
+            (4, &#39;文员&#39;, &#39;使用办公软件&#39;);
+            
+            
+            
+            -- 员工表
+            CREATE TABLE emp (
+              id INT PRIMARY KEY, -- 员工id
+              ename VARCHAR(50), -- 员工姓名
+              job_id INT, -- 职务id
+              mgr INT , -- 上级领导
+              joindate DATE, -- 入职日期
+              salary DECIMAL(7,2), -- 工资
+              bonus DECIMAL(7,2), -- 奖金
+              dept_id INT, -- 所在部门编号
+              CONSTRAINT emp_jobid_ref_job_id_fk FOREIGN KEY (job_id) REFERENCES job (id),
+              CONSTRAINT emp_deptid_ref_dept_id_fk FOREIGN KEY (dept_id) REFERENCES dept (id)
+            );
+            
+            -- 添加员工
+            INSERT INTO emp(id,ename,job_id,mgr,joindate,salary,bonus,dept_id) VALUES 
+            (1001,&#39;孙悟空&#39;,4,1004,&#39;2000-12-17&#39;,&#39;8000.00&#39;,NULL,20),
+            (1002,&#39;卢俊义&#39;,3,1006,&#39;2001-02-20&#39;,&#39;16000.00&#39;,&#39;3000.00&#39;,30),
+            (1003,&#39;林冲&#39;,3,1006,&#39;2001-02-22&#39;,&#39;12500.00&#39;,&#39;5000.00&#39;,30),
+            (1004,&#39;唐僧&#39;,2,1009,&#39;2001-04-02&#39;,&#39;29750.00&#39;,NULL,20),
+            (1005,&#39;李逵&#39;,4,1006,&#39;2001-09-28&#39;,&#39;12500.00&#39;,&#39;14000.00&#39;,30),
+            (1006,&#39;宋江&#39;,2,1009,&#39;2001-05-01&#39;,&#39;28500.00&#39;,NULL,30),
+            (1007,&#39;刘备&#39;,2,1009,&#39;2001-09-01&#39;,&#39;24500.00&#39;,NULL,10),
+            (1008,&#39;猪八戒&#39;,4,1004,&#39;2007-04-19&#39;,&#39;30000.00&#39;,NULL,20),
+            (1009,&#39;罗贯中&#39;,1,NULL,&#39;2001-11-17&#39;,&#39;50000.00&#39;,NULL,10),
+            (1010,&#39;吴用&#39;,3,1006,&#39;2001-09-08&#39;,&#39;15000.00&#39;,&#39;0.00&#39;,30),
+            (1011,&#39;沙僧&#39;,4,1004,&#39;2007-05-23&#39;,&#39;11000.00&#39;,NULL,20),
+            (1012,&#39;李逵&#39;,4,1006,&#39;2001-12-03&#39;,&#39;9500.00&#39;,NULL,30),
+            (1013,&#39;小白龙&#39;,4,1004,&#39;2001-12-03&#39;,&#39;30000.00&#39;,NULL,20),
+            (1014,&#39;关羽&#39;,4,1007,&#39;2002-01-23&#39;,&#39;13000.00&#39;,NULL,10);
+            
+            
+            
+            -- 工资等级表
+            CREATE TABLE salarygrade (
+              grade INT PRIMARY KEY,   -- 级别
+              losalary INT,  -- 最低工资
+              hisalary INT -- 最高工资
+            );
+            
+            -- 添加5个工资等级
+            INSERT INTO salarygrade(grade,losalary,hisalary) VALUES 
+            (1,7000,12000),
+            (2,12010,14000),
+            (3,14010,20000),
+            (4,20010,30000),
+            (5,30010,99990);
+            
+            -- 需求：
+            
+            -- 1.查询所有员工信息。查询员工编号，员工姓名，工资，职务名称，职务描述
+            /*
+                分析：
+                    1.员工编号，员工姓名，工资，需要查询emp表  职务名称，职务描述 需要查询job表
+                    2.查询条件 emp.job_id = job.id
+            
+            */
+            SELECT 
+                t1.`id`, -- 员工编号
+                t1.`ename`, -- 员工姓名
+                t1.`salary`,-- 工资
+                t2.`jname`, -- 职务名称
+                t2.`description` -- 职务描述
+            FROM 
+                emp t1, job t2
+            WHERE 
+                t1.`job_id` = t2.`id`;
+            
+            
+            
+            -- 2.查询员工编号，员工姓名，工资，职务名称，职务描述，部门名称，部门位置
+            /*
+                分析：
+                    1. 员工编号，员工姓名，工资 emp  职务名称，职务描述 job  部门名称，部门位置 dept
+                    2. 条件： emp.job_id = job.id and emp.dept_id = dept.id
+            */
+            
+            SELECT 
+                t1.`id`, -- 员工编号
+                t1.`ename`, -- 员工姓名
+                t1.`salary`,-- 工资
+                t2.`jname`, -- 职务名称
+                t2.`description`, -- 职务描述
+                t3.`dname`, -- 部门名称
+                t3.`loc` -- 部门位置
+            FROM 
+                emp t1, job t2,dept t3
+            WHERE 
+                t1.`job_id` = t2.`id` AND t1.`dept_id` = t3.`id`;
+               
+            -- 3.查询员工姓名，工资，工资等级
+            /*
+                分析：
+                    1.员工姓名，工资 emp  工资等级 salarygrade
+                    2.条件 emp.salary &gt;= salarygrade.losalary and emp.salary &lt;= salarygrade.hisalary
+                        emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+            */
+            SELECT 
+                t1.ename ,
+                t1.`salary`,
+                t2.*
+            FROM emp t1, salarygrade t2
+            WHERE t1.`salary` BETWEEN t2.`losalary` AND t2.`hisalary`;
+            
+            
+            
+            -- 4.查询员工姓名，工资，职务名称，职务描述，部门名称，部门位置，工资等级
+            /*
+                分析：
+                    1. 员工姓名，工资 emp ， 职务名称，职务描述 job 部门名称，部门位置，dept  工资等级 salarygrade
+                    2. 条件： emp.job_id = job.id and emp.dept_id = dept.id and emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+                        
+            */
+            SELECT 
+                t1.`ename`,
+                t1.`salary`,
+                t2.`jname`,
+                t2.`description`,
+                t3.`dname`,
+                t3.`loc`,
+                t4.`grade`
+            FROM 
+                emp t1,job t2,dept t3,salarygrade t4
+            WHERE 
+                t1.`job_id` = t2.`id` 
+                AND t1.`dept_id` = t3.`id`
+                AND t1.`salary` BETWEEN t4.`losalary` AND t4.`hisalary`;
+            
+            
+            
+            -- 5.查询出部门编号、部门名称、部门位置、部门人数
+            
+            /*
+                分析：
+                    1.部门编号、部门名称、部门位置 dept 表。 部门人数 emp表
+                    2.使用分组查询。按照emp.dept_id完成分组，查询count(id)
+                    3.使用子查询将第2步的查询结果和dept表进行关联查询
+                    
+            */
+            SELECT 
+                t1.`id`,t1.`dname`,t1.`loc` , t2.total
+            FROM 
+                dept t1,
+                (SELECT
+                    dept_id,COUNT(id) total
+                FROM 
+                    emp
+                GROUP BY dept_id) t2
+            WHERE t1.`id` = t2.dept_id;
+            
+            
+            -- 6.查询所有员工的姓名及其直接上级的姓名,没有领导的员工也需要查询
+            
+            /*
+                分析：
+                    1.姓名 emp， 直接上级的姓名 emp
+                        * emp表的id 和 mgr 是自关联
+                    2.条件 emp.id = emp.mgr
+                    3.查询左表的所有数据，和 交集数据
+                        * 使用左外连接查询
+                
+            */
+            /*
+            select
+                t1.ename,
+                t1.mgr,
+                t2.`id`,
+                t2.ename
+            from emp t1, emp t2
+            where t1.mgr = t2.`id`;
+            
+            */
+            
+            SELECT 
+                t1.ename,
+                t1.mgr,
+                t2.`id`,
+                t2.`ename`
+            FROM emp t1
+            LEFT JOIN emp t2
+            ON t1.`mgr` = t2.`id`;
+</code></pre>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 事务的基本介绍
+    1. 概念：
+        *  如果一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。
+        
+    2. 操作：
+        1. 开启事务： start transaction;
+        2. 回滚：rollback;
+        3. 提交：commit;
+    3. 例子：
+        CREATE TABLE account (
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            NAME VARCHAR(10),
+            balance DOUBLE
+        );
+        -- 添加数据
+        INSERT INTO account (NAME, balance) VALUES (&#39;zhangsan&#39;, 1000), (&#39;lisi&#39;, 1000);
+        
+        
+        SELECT * FROM account;
+        UPDATE account SET balance = 1000;
+        -- 张三给李四转账 500 元
+        
+        -- 0. 开启事务
+        START TRANSACTION;
+        -- 1. 张三账户 -500
+        
+        UPDATE account SET balance = balance - 500 WHERE NAME = &#39;zhangsan&#39;;
+        -- 2. 李四账户 +500
+        -- 出错了...
+        UPDATE account SET balance = balance + 500 WHERE NAME = &#39;lisi&#39;;
+        
+        -- 发现执行没有问题，提交事务
+        COMMIT;
+        
+        -- 发现出问题了，回滚事务
+        ROLLBACK;
+    4. MySQL数据库中事务默认自动提交
+        
+        * 事务提交的两种方式：
+            * 自动提交：
+                * mysql就是自动提交的
+                * 一条DML(增删改)语句会自动提交一次事务。
+            * 手动提交：
+                * Oracle 数据库默认是手动提交事务
+                * 需要先开启事务，再提交
+        * 修改事务的默认提交方式：
+            * 查看事务的默认提交方式：SELECT @@autocommit; -- 1 代表自动提交  0 代表手动提交
+            * 修改默认提交方式： set @@autocommit = 0;
+
+
+2. 事务的四大特征：
+    1. 原子性：是不可分割的最小操作单位，要么同时成功，要么同时失败。
+    2. 持久性：当事务提交或回滚后，数据库会持久化的保存数据。
+    3. 隔离性：多个事务之间。相互独立。
+    4. 一致性：事务操作前后，数据总量不变
+3. 事务的隔离级别（了解）
+    * 概念：多个事务之间隔离的，相互独立的。但是如果多个事务操作同一批数据，则会引发一些问题，设置不同的隔离级别就可以解决这些问题。
+    * 存在问题：
+        1. 脏读：一个事务，读取到另一个事务中没有提交的数据
+        2. 不可重复读(虚读)：在同一个事务中，两次读取到的数据不一样。
+        3. 幻读：一个事务操作(DML)数据表中所有记录，另一个事务添加了一条数据，则第一个事务查询不到自己的修改。
+    * 隔离级别：
+        1. read uncommitted：读未提交
+            * 产生的问题：脏读、不可重复读、幻读
+        2. read committed：读已提交 （Oracle）
+            * 产生的问题：不可重复读、幻读
+        3. repeatable read：可重复读 （MySQL默认）
+            * 产生的问题：幻读
+        4. serializable：串行化
+            * 可以解决所有的问题
+
+        * 注意：隔离级别从小到大安全性越来越高，但是效率越来越低
+        * 数据库查询隔离级别：
+            * select @@tx_isolation;
+        * 数据库设置隔离级别：
+            * set global transaction isolation level  级别字符串;
+
+    * 演示：
+        set global transaction isolation level read uncommitted;
+        start transaction;
+        -- 转账操作
+        update account set balance = balance - 500 where id = 1;
+        update account set balance = balance + 500 where id = 2;
+</code></pre>
+<h2 id="DCL："><a href="#DCL：" class="headerlink" title="DCL："></a>DCL：</h2><pre><code>* SQL分类：
+    1. DDL：操作数据库和表
+    2. DML：增删改表中数据
+    3. DQL：查询表中数据
+    4. DCL：管理用户，授权
+
+* DBA：数据库管理员
+
+* DCL：管理用户，授权
+    1. 管理用户
+        1. 添加用户：
+            * 语法：CREATE USER &#39;用户名&#39;@&#39;主机名&#39; IDENTIFIED BY &#39;密码&#39;;
+        2. 删除用户：
+            * 语法：DROP USER &#39;用户名&#39;@&#39;主机名&#39;;
+        3. 修改用户密码：
+            
+            UPDATE USER SET PASSWORD = PASSWORD(&#39;新密码&#39;) WHERE USER = &#39;用户名&#39;;
+            UPDATE USER SET PASSWORD = PASSWORD(&#39;abc&#39;) WHERE USER = &#39;lisi&#39;;
+            
+            SET PASSWORD FOR &#39;用户名&#39;@&#39;主机名&#39; = PASSWORD(&#39;新密码&#39;);
+            SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;123&#39;);
+
+            * mysql中忘记了root用户的密码？
+                1. cmd -- &gt; net stop mysql 停止mysql服务
+                    * 需要管理员运行该cmd
+
+                2. 使用无验证方式启动mysql服务： mysqld --skip-grant-tables
+                3. 打开新的cmd窗口,直接输入mysql命令，敲回车。就可以登录成功
+                4. use mysql;
+                5. update user set password = password(&#39;你的新密码&#39;) where user = &#39;root&#39;;
+                6. 关闭两个窗口
+                7. 打开任务管理器，手动结束mysqld.exe 的进程
+                8. 启动mysql服务
+                9. 使用新密码登录。
+        4. 查询用户：
+            -- 1. 切换到mysql数据库
+            USE myql;
+            -- 2. 查询user表
+            SELECT * FROM USER;
+            
+            * 通配符： % 表示可以在任意主机使用用户登录数据库
+
+    2. 权限管理：
+        1. 查询权限：
+            -- 查询权限
+            SHOW GRANTS FOR &#39;用户名&#39;@&#39;主机名&#39;;
+            SHOW GRANTS FOR &#39;lisi&#39;@&#39;%&#39;;
+
+        2. 授予权限：
+            -- 授予权限
+            grant 权限列表 on 数据库名.表名 to &#39;用户名&#39;@&#39;主机名&#39;;
+            -- 给张三用户授予所有权限，在任意数据库任意表上
+            
+            GRANT ALL ON *.* TO &#39;zhangsan&#39;@&#39;localhost&#39;;
+        3. 撤销权限：
+            -- 撤销权限：
+            revoke 权限列表 on 数据库名.表名 from &#39;用户名&#39;@&#39;主机名&#39;;
+            REVOKE UPDATE ON db3.`account` FROM &#39;lisi&#39;@&#39;%&#39;;
+    
+</code></pre>
+
+            </div>
+            <hr />
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">写作不易，客官能否打赏一杯奶茶？</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《MySql语法知识》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/02/16/sort-algorithms/" property="cc:attributionName"
+               rel="cc:attributionURL">
+                duan
+            </a> 采用
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '806a7d9d5617e59be503',
+        clientSecret: '6384c79cb261262e111ed19a4883e3433d8ee1ab',
+        repo: 'itdfq.github.io',
+        owner: 'itdfq',
+        admin: "itdfq",
+        id: '2020/02/16/sort-algorithms/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/30/oracle-shu-ju-ku/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Oracle数据库笔记">
+                        
+                        <span class="card-title">Oracle数据库笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文主要介绍Oracle的一些基本知识。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" target="_blank">
+                                    Oracle数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8E%9F%E5%88%9B/" target="_blank">
+                        <span class="chip bg-color">原创</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/16/sort-algorithms/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="MySql语法知识">
+                        
+                        <span class="card-title">MySql语法知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文整理mysql基本常用指令
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-02-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category" target="_blank">
+                                    mysql数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8E%9F%E5%88%9B/" target="_blank">
+                        <span class="chip bg-color">原创</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: God-Chin的博客<br />'
+            + '作者: duan<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020-2023 Duan. 版权所有
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">25.9k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+    <a href="https://github.com/909256107" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:909256107@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/a-ha-41-63-84" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=909256107&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/5521179406" class="tooltipped" target="_blank" data-tooltip="关注我的微博" data-position="top" data-delay="50">
+        <i class="fa fa-weibo"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 07, 29, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+    
+        
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!--动态线条背景-->
+    <script type="text/javascript"
+    color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script>
+    <!-- 雪花特效 -->
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-koharu"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+
+</html>
