@@ -7,14 +7,13 @@
 
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
-
     let gitalk = new Gitalk({
         clientID: '<%- theme.gitalk.oauth.clientId %>',
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
-        admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: <%- JSON.stringify(path.path.substr(0,50)) %>,
+        admin: '<%- JSON.stringify(theme.gitalk.admin) %>',
+        id: '<%- page.path %>',
         distractionFreeMode: false,
         proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
     });
