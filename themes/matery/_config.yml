@@ -271,7 +271,7 @@ gitalk:
    # gitalk配置，需要填写
     clientId: 806a7d9d5617e59be503 
     # gitalk配置，需要填写
-    clientSecret: 6384c79cb261262e111ed19a4883e3433d8ee1ab  
+    clientSecret: d9018ac4bdedbb9a18bd3266d639edfa6430142f
   admin: itdfq
 
 # the Gitment config，default disabled
