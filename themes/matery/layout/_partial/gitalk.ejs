@@ -15,7 +15,7 @@
         admin: '<%- JSON.stringify(theme.gitalk.admin) %>',
         id: '<%- page.path %>',
         distractionFreeMode: false,
-        proxy: 'https://cloudflare-cors-anywhere.blog.itdfq.workers.dev/?https://github.com/login/oauth/access_token'
+        proxy: 'https://cloudflare-cors-anywhere.itdfq.workers.dev/?https://github.com/login/oauth/access_token'
     });
 
     gitalk.render('gitalk-container');
