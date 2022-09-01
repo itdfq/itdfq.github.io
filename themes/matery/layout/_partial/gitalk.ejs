@@ -14,7 +14,8 @@
         owner: '<%- theme.gitalk.owner %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
         id: '<%- page.path %>',
-        distractionFreeMode: false  // Facebook-like distraction free mode
+        distractionFreeMode: false,
+        proxy: 'https://static.appgao.cate.fun/login/oauth/access_token'
     });
 
     gitalk.render('gitalk-container');
