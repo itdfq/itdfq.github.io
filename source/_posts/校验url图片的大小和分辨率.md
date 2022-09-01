@@ -1,5 +1,5 @@
 ---
-title: 校验url图片的ä»大小和分辨率
+title: 校验url图片的大小和分辨率
 top: false
 cover: false
 toc: true
@@ -15,7 +15,6 @@ categories:
 ### 校验代码如下
 ```java
 
-校验Url图片的大小和尺寸
 
 
 public void checkImageUrlSize(String url) throws Exception {
