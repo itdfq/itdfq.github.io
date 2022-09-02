@@ -14,8 +14,8 @@
         owner: '<%- theme.gitalk.owner %>',
         admin: '<%- JSON.stringify(theme.gitalk.admin) %>',
         id: '<%- page.path %>',
-        distractionFreeMode: false,
-        proxy: 'https://cloudflare-cors-anywhere.itdfq.workers.dev/?https://github.com/login/oauth/access_token'
+        distractionFreeMode: false
+
     });
 
     gitalk.render('gitalk-container');
