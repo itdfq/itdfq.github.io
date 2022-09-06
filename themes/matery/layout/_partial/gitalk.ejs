@@ -12,7 +12,7 @@
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
-        admin: '<%- JSON.stringify(theme.gitalk.admin) %>',
+        admin: <%- JSON.stringify(theme.gitalk.admin) %>,
         id: '<%- page.path %>',
         proxy: 'https://vercel.prohibitorum.top/github_access_token',
         distractionFreeMode: false
