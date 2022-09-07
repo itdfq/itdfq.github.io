@@ -18,7 +18,7 @@ layout: "contact"
 * **头像：**你的头像地址
 
 例如我的博客友链，大家可以加到自己博客里哦：
-* **名称：**909256107
+* **名称：**GodChin
 * **地址：**https://itdfq.com
 * **简介：**一起交流一起学习
 * **头像：**https://avatars.githubusercontent.com/u/55617984?v=4
