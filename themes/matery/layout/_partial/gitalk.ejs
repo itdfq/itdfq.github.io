@@ -7,14 +7,13 @@
 
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
-let id = location.page.substr(0,50);
     let gitalk = new Gitalk({
         clientID: '<%- theme.gitalk.oauth.clientId %>',
         clientSecret: '<%- theme.gitalk.oauth.clientSecret %>',
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: id,
+        id: '<%- page.path %>',
         proxy: 'https://vercel.prohibitorum.top/github_access_token',
         distractionFreeMode: false
 
