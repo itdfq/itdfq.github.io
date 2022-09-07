@@ -4,7 +4,7 @@
 <div class="card gitalk-card" data-aos="fade-up">
     <div id="gitalk-container" class="card-content"></div>
 </div>
-
+<script src="https://cdn.staticfile.org/blueimp-md5/2.19.0/js/md5.min.js"></script>
 <script src="<%- theme.libs.js.gitalk %>"></script>
 <script>
     let gitalk = new Gitalk({
@@ -13,7 +13,7 @@
         repo: '<%- theme.gitalk.repo %>',
         owner: '<%- theme.gitalk.owner %>',
         admin: <%- JSON.stringify(theme.gitalk.admin) %>,
-        id: '<%- page.path %>',
+        id: md5('<%- page.path %>'),
         proxy: 'https://vercel.prohibitorum.top/github_access_token',
         distractionFreeMode: false
 
