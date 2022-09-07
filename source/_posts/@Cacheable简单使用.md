@@ -9,7 +9,7 @@ summary: 本文主要介绍@Cacheable的简单使用,介绍下SpringBoot环境�
 tags:
 - 原创
 - 缓存
-  categories:
+categories:
 - java
 ---
 ### @Cacheable学习笔记

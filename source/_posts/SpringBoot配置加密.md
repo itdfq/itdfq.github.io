@@ -10,7 +10,7 @@ summary: 本文主要介绍SpringBoot使用jasypt，对配置进行加密
 tags:
 - 原创
 - java
-  categories:
+categories:
 - SpringBoot
 ---
 ### SpringBoot配置文件加密
