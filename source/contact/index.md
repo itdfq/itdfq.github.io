@@ -21,4 +21,4 @@ layout: "contact"
 * **名称：**909256107
 * **地址：**https://909256107.com
 * **简介：**一起交流一起学习
-* **头像：**https://godweiyang.com/medias/avatars/avatar.jpg
+* **头像：**https://avatars.githubusercontent.com/u/55617984?v=4

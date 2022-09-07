@@ -200,21 +200,21 @@ profile:
 myProjects:
   enable: true
   data:
-    hexo-matery-modified:
+    dingding:
       icon: fa-meetup
       iconBackground: 'linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)'
-      url: https://github.com/itdfq/hexo-matery-modified
-      desc: 我的个性化配置过的博客源码，即下即用。
-    ConParser:
+      url: https://github.com/itdfq/dingding
+      desc: 钉钉群聊机器人告警发送工具，一键使用
+    gowork:
       icon: fa-database
       iconBackground: 'linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)'
-      url: https://github.com/itdfq/SQLServer
-      desc: SQLServer的增删改查，初始化操作
-    ECNU-BeamerTemplate:
+      url: https://github.com/itdfq/gowork
+      desc: 签到打卡管理系统
+    common:
       icon: fa-file-text-o
       iconBackground: 'linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)'
-      url: https://github.com/itdfq/grape
-      desc: Springboot+mybatis+EasyUI综合项目
+      url: https://github.com/itdfq/common
+      desc: 工具包,主要包含基于注解的Redis分布式锁工具以及基于接口的加密解密工具
 
 # config my skills informations in about page.
 # If you don't want to display this `My Skills` content, you can deactivate or delete this configuration.
@@ -224,28 +224,28 @@ mySkills:
   data:
     Algorithm:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 90%
+      percent: 60%
     C++:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
+      percent: 20%
     Python:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
-      percent: 80%
+      percent: 20%
     Pytorch:
       background: 'linear-gradient(to right, #951213 0%, #961117 100%)'
-      percent: 75%
+      percent: 20%
     Dynet:
       background: 'linear-gradient(to right, #F12F12 0%, #F6464F 100%)'
       percent: 75%
     Java:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 50%
+      percent: 80%
     SQL:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 50%
+      percent: 80%
     HTML:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
-      percent: 45%
+      percent: 50%
 
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
