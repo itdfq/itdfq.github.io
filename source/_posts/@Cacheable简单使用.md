@@ -31,6 +31,7 @@ categories:
 #### 注意事项
 1. @CachePut和@Cacheable 同时使用的时候，返回值必须一样，否则@CachePut更细会异常
 #### 自定义的cacheManager
+
 ```java
 package com.itdfq.springboot.redis.config;
 
@@ -135,4 +136,6 @@ public class RedisConfig extends CachingConfigurerSupport {
 }
 
 ```
+
+
 
