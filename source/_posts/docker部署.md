@@ -13,7 +13,7 @@ tags:
 categories:
 - 项目部署
 ---
-*  # Docker通过jar包部署并运行
+# Docker通过jar包部署并运行
     1. 上传jar到服务器的指定目录
 
     2. 在该目录下创建Dockerfile 文件
@@ -67,4 +67,24 @@ categories:
             docker rm 容器id:删除容器
             docker images: 查看镜像
             docker rmi 镜像id:删除镜像
+---
 
+# 通过jdk容器进行部署
+####原理：
+原理其实是运行一个java镜像，运行时 通过java -jar 命令进行启动。每次更新可以更换对应的jar，重启容器就可以
+
+#### 启动命令：
+```shell
+docker run -d  --restart=always -v /project/xxl_job:/jar -v /project/xxl_job:/project/xxl_job -p 8080:8080 --name xxl-job java /usr/bin/java -jar -Duser.timezone=GMT+08 /project/xxl_job/xxl-job.jar
+
+```
+
+* -v /project/xxl_job:/project/xxl_job ：宿主机目录：docker容器虚拟目录
+* -p 8080:8080 ：对外暴露端口：docker容器真实目录
+* --name xxl-job   容器的名字
+* java /usr/bin/java -jar java指的是下载的java镜像 后面是启动命令
+* -Duser.timezone=GMT+08  指定的时区
+
+---
+# 通过maven插件自动化部署
+待补充
