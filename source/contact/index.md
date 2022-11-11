@@ -18,10 +18,15 @@ layout: "contact"
 * **头像：**你的头像地址
 
 例如我的博客友链，大家可以加到自己博客里哦：
+
+<img align="left" src="https://portrait.gitee.com/uploads/avatars/user/1774/5323516_dfq_QQ909256107_1578984534.png" style="width: 15%"/>
+
+
 * **名称：**GodChin
 * **地址：**https://itdfq.com
 * **简介：**记录自己的成长经历，结交更多志同道合的朋友，在自己进步的同时，传播正能量，帮助他人，服务社会。
-* **头像：**https://avatars.githubusercontent.com/u/55617984?v=4
+
+
 
 以下排名不分先后哦
 * **名称：**老王的技术分享大杂烩
