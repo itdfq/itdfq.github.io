@@ -11,7 +11,7 @@ tags:
 categories:
 ---
 ### 解析视频分辨率和时长
-####下载工具
+#### 下载工具
 使用的工具是：FFmpeg 分为win 和 linux
 需要提前安装 FFmpeg
 
@@ -25,7 +25,7 @@ categories:
 
 将下载的进行解压，配置系统环境变量
 
-![img.png](./java解析视频分辨率和时长/img.png)
+![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCE90951ab44c9005e6ce27947176bdf397/373)
 
 #### CMD命令行解析视频信息
 
@@ -33,11 +33,11 @@ categories:
 
 ```ffmpeg.exe -version``` 查看是否安装成功
 
-![img_1.png](./java解析视频分辨率和时长/img_1.png)
+![img_1.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCEddb4f4930255e61497b3f8722afade4e/379)
 
 解析视频信息：```ffmpeg.exe  -i   D:\test\视频\00aad32fff808081465a.mp4```
 
-![img.png](./java解析视频分辨率和时长/img3.png)
+![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCE3fbe76bebeab7cd5313520aa8a155427/384)
 
 #### Linux安装
 
@@ -187,4 +187,4 @@ public static class VideoInfoResponse implements Serializable {
 
 执行结果：
 
-![img.png](./java解析视频分辨率和时长/img4.png)
+![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCEf86eae85a0e9fa5e0622fa5e43ea98b9/391)
