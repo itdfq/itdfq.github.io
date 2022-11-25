@@ -25,7 +25,7 @@ categories:
 
 将下载的进行解压，配置系统环境变量
 
-![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCE90951ab44c9005e6ce27947176bdf397/373)
+![img.png](https://img-blog.csdnimg.cn/a9d19e29a91c44ca86ab66e22812ec38.png)
 
 #### CMD命令行解析视频信息
 
@@ -33,11 +33,11 @@ categories:
 
 ```ffmpeg.exe -version``` 查看是否安装成功
 
-![img_1.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCEddb4f4930255e61497b3f8722afade4e/379)
+![img_1.png](https://img-blog.csdnimg.cn/4646304503c344109f04ca1ec47e74fd.png)
 
 解析视频信息：```ffmpeg.exe  -i   D:\test\视频\00aad32fff808081465a.mp4```
 
-![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCE3fbe76bebeab7cd5313520aa8a155427/384)
+![img.png](https://img-blog.csdnimg.cn/d51c397c90e742f0a1320d58b6c4c965.png)
 
 #### Linux安装
 
@@ -187,4 +187,4 @@ public static class VideoInfoResponse implements Serializable {
 
 执行结果：
 
-![img.png](https://note.youdao.com/yws/public/resource/2f6c38ccc86b5b724735ca97a72d06c1/xmlnote/WEBRESOURCEf86eae85a0e9fa5e0622fa5e43ea98b9/391)
+![img.png](https://img-blog.csdnimg.cn/233153aa686a425f9ce76ac8b6846e0b.png)
