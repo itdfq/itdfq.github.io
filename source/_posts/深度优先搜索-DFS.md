@@ -38,7 +38,7 @@ import java.util.Stack;
 /**
  * 深度优先搜索
  *
- * @author duanfangqin 2022/9/15 14:22
+ * @author dfq 2022/9/15 14:22
  * @implNote 先序遍历  根左右
  */
 public class DfSSort {
