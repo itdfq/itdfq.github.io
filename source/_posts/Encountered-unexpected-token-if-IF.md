@@ -9,9 +9,9 @@ password:
 summary: 使用mybatis遇到的bug
 tags:
 - 原创
-- BUG
-  categories:
-- BUG
+- bug
+categories:
+- sql
 ---
 ### 报错信息如下：
 ```text
