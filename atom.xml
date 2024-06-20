@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>GodChin</title>
+  
+  <subtitle>GodChin</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/itdfq/itdfq.github.io/"/>
+  <updated>2024-06-20T09:46:09.711Z</updated>
+  <id>https://github.com/itdfq/itdfq.github.io/</id>
+  
+  <author>
+    <name>duan</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分批删除Redis避免宕机</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/</id>
+    <published>2024-04-03T06:40:58.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;分批删除Redis避免宕机&quot;&gt;&lt;a href=&quot;#分批删除Redis避免宕机&quot; class=&quot;headerlink&quot; title=&quot;分批删除Redis避免宕机&quot;&gt;&lt;/a&gt;分批删除Redis避免宕机&lt;/h2&gt;&lt;h3 id=&quot;方式一&quot;&gt;&lt;a href=&quot;#方式一&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="redis" scheme="https://github.com/itdfq/itdfq.github.io/categories/redis/"/>
+    
+    
+      <category term="中间件" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+      <category term="redis" scheme="https://github.com/itdfq/itdfq.github.io/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker查看宿主机配置文件目录</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/</id>
+    <published>2023-12-22T09:54:30.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Docker-查看宿主机配置文件目录&quot;&gt;&lt;a href=&quot;#Docker-查看宿主机配置文件目录&quot; class=&quot;headerlink&quot; title=&quot;Docker 查看宿主机配置文件目录&quot;&gt;&lt;/a&gt;Docker
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://github.com/itdfq/itdfq.github.io/categories/linux/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="docker" scheme="https://github.com/itdfq/itdfq.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EasyExecl导出两个sheet</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/</id>
+    <published>2023-04-20T06:33:54.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;具体实现代码如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="EasyExcel" scheme="https://github.com/itdfq/itdfq.github.io/tags/EasyExcel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Expected one result (or null) to be returned XXXX</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/</id>
+    <published>2023-01-13T02:53:18.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="sql" scheme="https://github.com/itdfq/itdfq.github.io/categories/sql/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="mysql" scheme="https://github.com/itdfq/itdfq.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>广度优先搜索(BFS)</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/12/07/guang-du-you-xian-sou-suo-bfs/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/12/07/guang-du-you-xian-sou-suo-bfs/</id>
+    <published>2022-12-07T09:24:58.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;广度优先搜索&quot;&gt;&lt;a href=&quot;#广度优先搜索&quot; class=&quot;headerlink&quot; title=&quot;广度优先搜索&quot;&gt;&lt;/a&gt;广度优先搜索&lt;/h2&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/tags/java/"/>
+    
+      <category term="树" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度优先搜索(DFS)</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/12/07/shen-du-you-xian-sou-suo-dfs/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/12/07/shen-du-you-xian-sou-suo-dfs/</id>
+    <published>2022-12-07T09:18:48.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;深度优先搜索其实就是先序遍历&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/c2f7c2c464a646abb64fa3aa09c29875.png&quot; alt=&quot;img.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;规律是 根左右&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/tags/java/"/>
+    
+      <category term="树" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>合并有序链表</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/12/07/he-bing-you-xu-lian-biao/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/12/07/he-bing-you-xu-lian-biao/</id>
+    <published>2022-12-07T09:15:25.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;合并有序链表&quot;&gt;&lt;a href=&quot;#合并有序链表&quot; class=&quot;headerlink&quot; title=&quot;合并有序链表&quot;&gt;&lt;/a&gt;合并有序链表&lt;/h2&gt;&lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/tags/java/"/>
+    
+      <category term="链表" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java解析视频分辨率和时长</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/11/25/java-jie-xi-shi-pin-fen-bian-lu-he-shi-chang/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/11/25/java-jie-xi-shi-pin-fen-bian-lu-he-shi-chang/</id>
+    <published>2022-11-25T03:34:21.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;解析视频分辨率和时长&quot;&gt;&lt;a href=&quot;#解析视频分辨率和时长&quot; class=&quot;headerlink&quot; title=&quot;解析视频分辨率和时长&quot;&gt;&lt;/a&gt;解析视频分辨率和时长&lt;/h3&gt;&lt;h4 id=&quot;下载工具&quot;&gt;&lt;a href=&quot;#下载工具&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>nacos实现同步配置</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/11/01/nacos-shi-xian-tong-bu-pei-zhi/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/11/01/nacos-shi-xian-tong-bu-pei-zhi/</id>
+    <published>2022-11-01T03:54:19.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;nacos配置&quot;&gt;&lt;a href=&quot;#nacos配置&quot; class=&quot;headerlink&quot; title=&quot;nacos配置&quot;&gt;&lt;/a&gt;nacos配置&lt;/h1&gt;&lt;h3 id=&quot;pom依赖&quot;&gt;&lt;a href=&quot;#pom依赖&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="微服务" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="服务注册发现" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%8F%91%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>postman使用另一个接口的返回值</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/09/22/postman-shi-yong-ling-yi-ge-jie-kou-de-fan-hui-zhi/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/09/22/postman-shi-yong-ling-yi-ge-jie-kou-de-fan-hui-zhi/</id>
+    <published>2022-09-22T01:35:08.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;首先调用接口，可以拿到token&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="postman" scheme="https://github.com/itdfq/itdfq.github.io/tags/postman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BindingExceptioné记录</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/09/07/bindingexceptione-ji-lu/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/09/07/bindingexceptione-ji-lu/</id>
+    <published>2022-09-07T06:40:01.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;出现原因：&quot;&gt;&lt;a href=&quot;#出现原因：&quot; class=&quot;headerlink&quot; title=&quot;出现原因：&quot;&gt;&lt;/a&gt;出现原因：&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;xml中的mapper标签的namespace
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="bug" scheme="https://github.com/itdfq/itdfq.github.io/tags/bug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot配置加密</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/09/06/springboot-pei-zhi-jia-mi/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/09/06/springboot-pei-zhi-jia-mi/</id>
+    <published>2022-09-06T08:30:54.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;SpringBoot配置文件加密&quot;&gt;&lt;a href=&quot;#SpringBoot配置文件加密&quot; class=&quot;headerlink&quot; title=&quot;SpringBoot配置文件加密&quot;&gt;&lt;/a&gt;SpringBoot配置文件加密&lt;/h3&gt;&lt;hr&gt;
+&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://github.com/itdfq/itdfq.github.io/categories/SpringBoot/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>@Cacheable简单使用</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/09/06/cacheable-jian-dan-shi-yong/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/09/06/cacheable-jian-dan-shi-yong/</id>
+    <published>2022-09-06T08:24:39.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Cacheable学习笔记&quot;&gt;&lt;a href=&quot;#Cacheable学习笔记&quot; class=&quot;headerlink&quot; title=&quot;@Cacheable学习笔记&quot;&gt;&lt;/a&gt;@Cacheable学习笔记&lt;/h3&gt;&lt;hr&gt;
+&lt;h4 id=&quot;注解&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="缓存" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>校验url图片的大小和分辨率</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/09/01/xiao-yan-url-tu-pian-de-da-xiao-he-fen-bian-lu/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/09/01/xiao-yan-url-tu-pian-de-da-xiao-he-fen-bian-lu/</id>
+    <published>2022-09-01T02:59:03.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;校验代码如下&quot;&gt;&lt;a href=&quot;#校验代码如下&quot; class=&quot;headerlink&quot; title=&quot;校验代码如下&quot;&gt;&lt;/a&gt;校验代码如下&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-java&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github+Hexo+Actions持续集成部署博客</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/08/30/hexo-chi-xu-hua-bu-shu/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/08/30/hexo-chi-xu-hua-bu-shu/</id>
+    <published>2022-08-30T09:50:27.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;###Github+Hexo+Actions持续集成部署博客&lt;br&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/137867759&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="转载" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker安装Redis</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/07/29/docker-an-zhuang-redis/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/07/29/docker-an-zhuang-redis/</id>
+    <published>2022-07-29T03:40:13.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;docker安装redis&quot;&gt;&lt;a href=&quot;#docker安装redis&quot; class=&quot;headerlink&quot; title=&quot;docker安装redis&quot;&gt;&lt;/a&gt;docker安装redis&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;docker pull
+        
+      
+    
+    </summary>
+    
+      <category term="软件安装" scheme="https://github.com/itdfq/itdfq.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="docker" scheme="https://github.com/itdfq/itdfq.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http接口加密解密的注解实现工具</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/02/24/http-jie-kou-jia-mi-jie-mi-de-zhu-jie-shi-xian-gong-ju/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/02/24/http-jie-kou-jia-mi-jie-mi-de-zhu-jie-shi-xian-gong-ju/</id>
+    <published>2022-02-24T07:19:29.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;实现逻辑&quot;&gt;&lt;a href=&quot;#实现逻辑&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="工具" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Redisson的分布式锁注解工具</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/02/24/ji-yu-redisson-de-fen-bu-shi-suo-zhu-jie-gong-ju/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/02/24/ji-yu-redisson-de-fen-bu-shi-suo-zhu-jie-gong-ju/</id>
+    <published>2022-02-24T06:05:29.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h3&gt;&lt;h4 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="工具" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>钉钉群机器人告警工具</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/02/11/ding-ding-qun-ji-qi-ren-gao-jing-gong-ju/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/02/11/ding-ding-qun-ji-qi-ren-gao-jing-gong-ju/</id>
+    <published>2022-02-11T03:19:31.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;钉钉群机器人&quot;&gt;&lt;a href=&quot;#钉钉群机器人&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="工具" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符流和字节流的区别</title>
+    <link href="https://github.com/itdfq/itdfq.github.io/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/"/>
+    <id>https://github.com/itdfq/itdfq.github.io/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/</id>
+    <published>2022-01-05T08:10:44.000Z</published>
+    <updated>2024-06-20T09:46:09.711Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;字节流&quot;&gt;&lt;a href=&quot;#字节流&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://github.com/itdfq/itdfq.github.io/categories/java/"/>
+    
+    
+      <category term="原创" scheme="https://github.com/itdfq/itdfq.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
+    
+      <category term="IO" scheme="https://github.com/itdfq/itdfq.github.io/tags/IO/"/>
+    
+  </entry>
+  
+</feed>
