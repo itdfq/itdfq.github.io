@@ -96,6 +96,7 @@ public class TiktokDelteStockLockTest extends BaseTest {
                         String keyStr = new String(key);
                         Long del = connection.del(key);
                     });
+                    
                 }
                 cursor.close();
                 return null;
