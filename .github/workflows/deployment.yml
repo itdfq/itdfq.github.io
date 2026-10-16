@@ -34,7 +34,7 @@ jobs:
         GIT_NAME: itdfq
         GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
         REPO: github.com/itdfq/itdfq.github.io
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         cd ./public && git init && git add .
         git config --global user.name $GIT_NAME
