@@ -1,0 +1,14 @@
+# 友链数据（Butterfly flink 格式）
+# 文档: https://butterfly.js.org/posts/ceeb73f/#友情链接
+
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: CSDN专栏
+      link: https://blog.csdn.net/qq_43417276
+      avatar: https://img-home.csdnimg.cn/images/20201124032511.png
+      descr: 记录学习过程中的各种坑，积累经验
+    - name: 码云专栏
+      link: https://gitee.com/godchin/dashboard/projects
+      avatar: https://gitee.com/static/images/logo-black.svg
+      descr: 码云地址

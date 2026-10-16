@@ -1,21 +1,24 @@
 # Hexo Configuration
-
+## Docs: https://hexo.io/docs/configuration.html
 
 # Site
 title: GodChin
 subtitle: GodChin
-description: JAVA 
+description: JAVA
 keywords: "123"
 author: duan
 language: zh-CN
-timezone:
+timezone: Asia/Shanghai
 
 # URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/itdfq/itdfq.github.io
+## 站点真实访问域名（此前误填为 GitHub 仓库地址，会导致 sitemap/feed 里 URL 错误）
+url: https://bestduan.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
 
 # Directory
 source_dir: source
@@ -28,141 +31,85 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :title.md
 default_layout: post
-titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude:
 filename_case: 0
 render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
+syntax_highlighter: highlight.js
 highlight:
-  enable: false
-  line_number: false
+  line_number: true
   auto_detect: false
-  tab_replace:
+  tab_replace: ''
+  wrap: true
+  hljs: false
 
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true    # default false
-  custom_css:
+# 中文标题转拼音，保持历史 URL 不变（线上已有 URL 依赖此项，勿关）
+permalink_pinyin:
+  enable: true
+  separator: '-'
 
+# 本地搜索（Butterfly 使用）
 search:
   path: search.xml
   field: post
+  content: true
+  format: html
 
-permalink_pinyin:
-  enable: true
-  separator: '-' # default: '-'
-
+# RSS 订阅
 feed:
   type: atom
   path: atom.xml
   limit: 20
   hub:
-  content:
+  content: true
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
 
-Plugins:
-- hexo-generator-baidu-sitemap
-- hexo-generator-sitemap
-
-baidusitemap:
-    path: baidusitemap.xml
+# 站点地图
 sitemap:
-    path: sitemap.xml
-  
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
+  path: sitemap.xml
+
+# 百度站点地图
+baidusitemap:
+  path: baidusitemap.xml
+
+# 首页设置
 index_generator:
   path: ''
   per_page: 12
   order_by: -date
-  
-# Category & Tag
+
+# 分类与标签
 default_category: uncategorized
 category_map:
 tag_map:
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
+# 日期时间格式
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
-# Pagination
-## Set per_page to 0 to disable pagination
+# 分页
 per_page: 12
 pagination_dir: page
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: matery
+# 扩展
+## 插件: https://hexo.io/plugins/
+## 主题: https://hexo.io/themes/
+theme: butterfly
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
+# 部署
+## 注意：线上实际由 GitHub Actions 自动部署，此段仅供本地 `hexo deploy` 手动使用
 deploy:
 - type: git
   repository:
     github: https://github.com/itdfq/itdfq.github.io
-    # coding: git@e.coding.net:godweiyang/godweiyang.git
   branch: master
-# - type: baidu_url_submitter
-
-
-# live2d:
-#   enable: true
-#   scriptFrom: local
-#   pluginRootPath: live2dw/
-#   pluginJsPath: lib/
-#   pluginModelPath: assets/
-#   tagMode: false
-#   log: false
-#   model:
-#     use: live2d-widget-model-koharu
-#   display:
-#     position: right
-#     width: 150
-#     height: 300
-#   mobile:
-#     show: true
-#   react:
-#     opacity: 0.7
-live2d:
-  enable: true
-  # enable: false
-  scriptFrom: local # 默认
-  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)
-  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径
-  pluginModelPath: assets/ # 模型文件相对与插件根目录路径
-  # scriptFrom: jsdelivr # jsdelivr CDN
-  # scriptFrom: unpkg # unpkg CDN
-  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url
-  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中
-  debug: false # 调试, 是否在控制台输出日志
-  model:
-    use: live2d-widget-model-koharu # npm-module package name
-    # use: wanko # 博客根目录/live2d_models/ 下的目录名
-    # use: ./wives/wanko # 相对于博客根目录的路径
-    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url
-  display:
-    position: right
-    width: 150
-    height: 300
-  mobile:
-    show: true # 手机中是否展示
-
-baidu_url_submit:
-  count: 100
-  host: baidu.com
-  token:  # 填写你的百度统计token，不写也没事
-  path: baidu_urls.txt
-
