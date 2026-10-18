@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>GodChin - GodChin</title><meta name="author" content="duan"><meta name="copyright" content="duan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JAVA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GodChin">
+<meta property="og:url" content="https://bestduan.cn/index.html">
+<meta property="og:site_name" content="GodChin">
+<meta property="og:description" content="JAVA">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bestduan.cn/img/avatar.jpg">
+<meta property="article:author" content="duan">
+<meta property="article:tag" content="123">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bestduan.cn/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://bestduan.cn/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GodChin',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2026-10-18 19:39:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="GodChin" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="GodChin"><span class="site-name">GodChin</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">GodChin</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/909256107" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:909256107@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=909256107&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/" title="分批删除Redis避免宕机">分批删除Redis避免宕机</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-04-03T06:40:58.000Z" title="发表于 2024-04-03 14:40:58">2024-04-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/redis/">redis</a></span></div><div class="content">分批删除Redis避免宕机方式一使用for循环分批去获取数据,去删除JOOM*的数据
+123456789101112131415161718192021222324@Testpublic void deleteTest()throws Exception&#123;    ScanOptions options = ScanOptions.scanOptions()            .match(&quot;JOOM*&quot;)            .count(1000)  // 每次迭代返回的 key 的数量            .build();    redisTemplate.executeWithStickyConnection((RedisCallback&lt;Void&gt;) connection -&gt; &#123;        try &#123;            Cursor&lt;byte[]&gt; cursor = connection.scan(options);            while (cursor.hasNex ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/" title="Docker查看宿主机配置文件目录">Docker查看宿主机配置文件目录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-12-22T09:54:30.000Z" title="发表于 2023-12-22 17:54:30">2023-12-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/linux/">linux</a></span></div><div class="content">Docker 查看宿主机配置文件目录1.使用命令 docker inspect [Mysql ID]查看镜像的配置信息2.获取 GraphDriver.Data.MergedDir属性3.进入到文件夹  &#x2F;var&#x2F;lib&#x2F;docker&#x2F;overlay2&#x2F;c11da6f40cd12e22f03ae1049ad15efaf0f92f99af3d77f8c8b8119e63d141d4&#x2F;4.再进入到 diff&#x2F;etc  就可以修改容器内配置信息
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/" title="EasyExecl导出两个sheet">EasyExecl导出两个sheet</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-20T06:33:54.000Z" title="发表于 2023-04-20 14:33:54">2023-04-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">具体实现代码如下：
+1234567891011121314151617public void export(HttpServletResponse response)&#123;    //设置返回excel的格式为xlsx    response.reset();    response.setContentType(&quot;application/vnd.openmosix-officedocument.spreadsheetml.sheet;charset=utf-8&quot;);    response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=&quot; + URLEncoder.encode(&quot;shopee_shop_category&quot;, &quot;utf-8&quot;) + &quot;.xlsx&quot;);    com.alibaba.excel.ExcelWriter excelWriter = null;    try (Output ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/" title="Expected one result (or null) to be returned XXXX">Expected one result (or null) to be returned XXXX</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-13T02:53:18.000Z" title="发表于 2023-01-13 10:53:18">2023-01-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/sql/">sql</a></span></div><div class="content">nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne()举例假如说现在有个sql,表a 和 表b 是一对多的关系,现在需要查询出a表的id，且满足以下条件子表b的score需要大于3然后现在这个查询就会出问题
+1select count(a.id) from a  left join b on a.item_id = b.item_id  where b.score&gt;3 group by a.item_id
+报错：nested exception is org.apache.ibatis.exceptions.TooManyResultsException: Expected one result (or null) to be returned by selectOne()
+原因：
+group by 分组之后是多个列，但是count 函数返回的是单列 导致返回的条数出错
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/12/07/guang-du-you-xian-sou-suo-bfs/" title="广度优先搜索(BFS)">广度优先搜索(BFS)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-07T09:24:58.000Z" title="发表于 2022-12-07 17:24:58">2022-12-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">广度优先搜索
+思想123456789101112广度优先遍历树，需要用到队列（Queue）来存储节点对象，队列的特点就是先进先出。先往队列中插入左节点，再插入右节点，队列出队就是先出左节点，再出右节点。 首先将A节点插入队列中，队列中有元素（A）; 将A节点弹出，同时将A节点的左节点B、右节点C依次插入队列，B在队首，C在队尾，（B，C），此时得到A节点； 将队首元素B弹出，并将B的左节点D、右节点E插入队列，C在队首，E在队尾（C，D，E），此时得到B节点； 再将队首元素C弹出，并将C节点的左节点F，右节点G依次插入队列，（D，E，F，G），此时得到C节点； 将D弹出，此时D没有子节点，队列中元素为（E，F，G），得到D节点； 。。。以此类推。最终的遍历结果为：A，B，C，D，E，F，G，H，I。
+
+代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546package algorithm.list;import java.util.ArrayList;import ja ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/12/07/shen-du-you-xian-sou-suo-dfs/" title="深度优先搜索(DFS)">深度优先搜索(DFS)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-07T09:18:48.000Z" title="发表于 2022-12-07 17:18:48">2022-12-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">深度优先搜索其实就是先序遍历
+
+规律是 根左右
+123456将A节点弹出，同时将A的子节点C，B压入栈中，此时B在栈的顶部，stack(B,C)；将B节点弹出，同时将B的子节点E，D压入栈中，此时D在栈的顶部，stack（D,E,C）；将D节点弹出，由于D没有子节点压入，此时E在栈的顶部，stack（E，C）；将E节点弹出，同时将E的子节点H压入，stack（H,C）；将H节点弹出，由于H没有子节点压入，此时C在栈的顶部，同时将C的G，F子节点压入栈中，stack（C，F，G）；...依次往下，最终遍历完成，遍历结果是：A，B，D，E，H，C，F，I，G。
+
+
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465package algorithm.list;import java.util.ArrayList;import java.util.Stack;/** * 深度优先搜索 * * @auth ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/12/07/he-bing-you-xu-lian-biao/" title="合并有序链表">合并有序链表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-07T09:15:25.000Z" title="发表于 2022-12-07 17:15:25">2022-12-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></span></div><div class="content">合并有序链表题目将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。LeetCode:合并有序链表
+示例 1：
+输入：l1 &#x3D; [1,2,4], l2 &#x3D; [1,3,4]输出：[1,1,2,3,4,4]示例 2：
+输入：l1 &#x3D; [], l2 &#x3D; []输出：[]示例 3：
+输入：l1 &#x3D; [], l2 &#x3D; [0]输出：[0]
+提示：
+两个链表的节点数目范围是 [0, 50]-100 &lt;&#x3D; Node.val &lt;&#x3D; 100l1 和 l2 均按 非递减顺序 排列
+
+代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667package com.itdfq.algorithm;import java.util.ArrayList;import java.util. ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/25/java-jie-xi-shi-pin-fen-bian-lu-he-shi-chang/" title="java解析视频分辨率和时长">java解析视频分辨率和时长</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-25T03:34:21.000Z" title="发表于 2022-11-25 11:34:21">2022-11-25</time></span></div><div class="content">解析视频分辨率和时长下载工具使用的工具是：FFmpeg 分为win 和 linux需要提前安装 FFmpeg
+windows版本 
+linux版本
+有道笔记
+windows 安装将下载的进行解压，配置系统环境变量
+
+CMD命令行解析视频信息配置结束后，可以使用
+-version``` 查看是否安装成功123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151![im ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/11/01/nacos-shi-xian-tong-bu-pei-zhi/" title="nacos实现同步配置">nacos实现同步配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-01T03:54:19.000Z" title="发表于 2022-11-01 11:54:19">2022-11-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/">微服务</a></span></div><div class="content">nacos配置pom依赖    &lt;!--nacos--&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;
+        &lt;version&gt;2.2.6.RELEASE&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-config&lt;/artifactId&gt;
+        &lt;version&gt;2.2.6.RELEASE&lt;/version&gt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/22/postman-shi-yong-ling-yi-ge-jie-kou-de-fan-hui-zhi/" title="postman使用另一个接口的返回值">postman使用另一个接口的返回值</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-22T01:35:08.000Z" title="发表于 2022-09-22 09:35:08">2022-09-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a></span></div><div class="content">需求
+首先调用接口，可以拿到token
+
+首先调用接口，可以拿到token
+
+
+
+实现逻辑代码：
+1234567891011121314// #将返回值存在一个data里 pm为postman的内置函数 pm.response意思为获取这个请求的返回值 .json()为存为json格式 后续可以通过键来取值var jsondata = pm.response.json() // # 获取变量jsondata的data里的path值 存为变量var token=jsondata.access_token // # 打印 可以省略console.log(token) // # 设置全局变量 也可以设置环境变量  pm.globals.set(&quot;token&quot;, token); // # 设置环境变量 // # pm.environment.set(&quot;variable_key&quot;, &quot;variable_value&quot;);
+
+生成的token可以在 全局变量中查到
+使用&#123;&#123;token&#125;&#125;可以获取到设置 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/07/bindingexceptione-ji-lu/" title="BindingExceptioné记录">BindingExceptioné记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-07T06:40:01.000Z" title="发表于 2022-09-07 14:40:01">2022-09-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/java/">java</a></span></div><div class="content">出现原因：
+xml中的mapper标签的namespace 是否对应
+@MapperScan(“com.itdfq.springboot.db.dao”)设置mapper扫描
+xml文件可能没有放在resource目录下，这样build的时候可能不会build xml文件；需要设置如下：123456789101112&lt;build&gt;     &lt;resources&gt;        &lt;resource&gt;            &lt;directory&gt;src/main/java&lt;/directory&gt;            &lt;includes&gt;                &lt;include&gt;**/*.properties&lt;/include&gt;                &lt;include&gt;**/*.xml&lt;/include&gt;            &lt;/includes&gt;            &lt;filtering&gt;false&lt;/filtering ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/09/06/springboot-pei-zhi-jia-mi/" title="SpringBoot配置加密">SpringBoot配置加密</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-06T08:30:54.000Z" title="发表于 2022-09-06 16:30:54">2022-09-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/SpringBoot/">SpringBoot</a></span></div><div class="content">SpringBoot配置文件加密
+依赖
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt;
+        &lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt;
+        &lt;version&gt;2.1.2&lt;/version&gt;
+    &lt;/dependency&gt;
+
+设置秘钥jasypt.encryptor.password&#x3D;秘钥开发环境可以直接在配置文件中指定，生产环境可以使用启动命理   –jasypt.encryptor.password&#x3D;XXX 进行配置####加密解密
+1234567891011121314151617181920212223242526  package com.itdfq.springboot;import org.jasypt.encryption.StringEncryptor;import org.jun ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">duan</div><div class="author-info__description">一起学习一起交流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/909256107"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/909256107" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:909256107@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=909256107&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 GodChin 的博客</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/" title="分批删除Redis避免宕机">分批删除Redis避免宕机</a><time datetime="2024-04-03T06:40:58.000Z" title="发表于 2024-04-03 14:40:58">2024-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/" title="Docker查看宿主机配置文件目录">Docker查看宿主机配置文件目录</a><time datetime="2023-12-22T09:54:30.000Z" title="发表于 2023-12-22 17:54:30">2023-12-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/" title="EasyExecl导出两个sheet">EasyExecl导出两个sheet</a><time datetime="2023-04-20T06:33:54.000Z" title="发表于 2023-04-20 14:33:54">2023-04-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/" title="Expected one result (or null) to be returned XXXX">Expected one result (or null) to be returned XXXX</a><time datetime="2023-01-13T02:53:18.000Z" title="发表于 2023-01-13 10:53:18">2023-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/07/guang-du-you-xian-sou-suo-bfs/" title="广度优先搜索(BFS)">广度优先搜索(BFS)</a><time datetime="2022-12-07T09:24:58.000Z" title="发表于 2022-12-07 17:24:58">2022-12-07</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            <a class="card-more-btn" href="/categories/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a>
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/IDEA/"><span class="card-category-list-name">IDEA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">Oracle数据库</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SpringBoot/"><span class="card-category-list-name">SpringBoot</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/cmd%E5%91%BD%E4%BB%A4/"><span class="card-category-list-name">cmd命令</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/"><span class="card-category-list-name">java</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/json/"><span class="card-category-list-name">json</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/linux/"><span class="card-category-list-name">linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/mysql%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">mysql数据库</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.3em; color: #99a1ac">工具</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/" style="font-size: 1.1em; color: #999">中间件</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.1em; color: #999">多线程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 1.2em; color: #999da3">数据库</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 1.1em; color: #999">链表</a> <a href="/tags/redis/" style="font-size: 1.1em; color: #999">redis</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" style="font-size: 1.2em; color: #999da3">项目部署</a> <a href="/tags/RabbitMQ/" style="font-size: 1.1em; color: #999">RabbitMQ</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 1.1em; color: #999">缓存</a> <a href="/tags/mysql/" style="font-size: 1.1em; color: #999">mysql</a> <a href="/tags/%E5%8E%9F%E5%88%9B/" style="font-size: 1.5em; color: #99a9bf">原创</a> <a href="/tags/zookeeper/" style="font-size: 1.1em; color: #999">zookeeper</a> <a href="/tags/%E6%A0%91/" style="font-size: 1.2em; color: #999da3">树</a> <a href="/tags/EasyExcel/" style="font-size: 1.1em; color: #999">EasyExcel</a> <a href="/tags/web%E5%89%8D%E7%AB%AF/" style="font-size: 1.1em; color: #999">web前端</a> <a href="/tags/java/" style="font-size: 1.4em; color: #99a5b6">java</a> <a href="/tags/IOC/" style="font-size: 1.1em; color: #999">IOC</a> <a href="/tags/sql/" style="font-size: 1.1em; color: #999">sql</a> <a href="/tags/Shiro/" style="font-size: 1.1em; color: #999">Shiro</a> <a href="/tags/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 1.1em; color: #999">EL表达式</a> <a href="/tags/IDEA%E9%85%8D%E7%BD%AE/" style="font-size: 1.1em; color: #999">IDEA配置</a> <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/" style="font-size: 1.1em; color: #999">逆向工程</a> <a href="/tags/postman/" style="font-size: 1.1em; color: #999">postman</a> <a href="/tags/IO/" style="font-size: 1.1em; color: #999">IO</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E6%B3%A8%E5%86%8C%E5%8F%91%E7%8E%B0/" style="font-size: 1.1em; color: #999">服务注册发现</a> <a href="/tags/docker/" style="font-size: 1.4em; color: #99a5b6">docker</a> <a href="/tags/Cookie-Session/" style="font-size: 1.1em; color: #999">Cookie&Session</a> <a href="/tags/bug/" style="font-size: 1.2em; color: #999da3">bug</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/" style="font-size: 1.1em; color: #999">数据库操作</a> <a href="/tags/%E8%BD%AC%E8%BD%BD/" style="font-size: 1.1em; color: #999">转载</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">40</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">31.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-10-18T11:39:54.009Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By duan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["记录自己的成长经历","一起学习一起交流"])
+  } else {
+    document.getElementById("subtitle").textContent = "记录自己的成长经历"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

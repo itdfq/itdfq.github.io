@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>EL表达式&amp;&amp; JSTL | GodChin</title><meta name="author" content="duan"><meta name="copyright" content="duan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="EL表达式1. 概念：Expression Language 表达式语言 2. 作用：替换和简化jsp页面中java代码的编写 3. 语法：$&#123;表达式&#125; 4. 注意：     * jsp默认支持el表达式的。如果要忽略el表达式         1. 设置jsp中page指令中：isELIgnored&#x3D;&quot;true&quot; 忽略当前jsp页面中所有的el表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EL表达式&amp;&amp; JSTL">
+<meta property="og:url" content="https://bestduan.cn/2020/11/27/el-biao-da-shi-jstl/index.html">
+<meta property="og:site_name" content="GodChin">
+<meta property="og:description" content="EL表达式1. 概念：Expression Language 表达式语言 2. 作用：替换和简化jsp页面中java代码的编写 3. 语法：$&#123;表达式&#125; 4. 注意：     * jsp默认支持el表达式的。如果要忽略el表达式         1. 设置jsp中page指令中：isELIgnored&#x3D;&quot;true&quot; 忽略当前jsp页面中所有的el表达式">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bestduan.cn/img/avatar.jpg">
+<meta property="article:published_time" content="2020-11-27T05:32:30.000Z">
+<meta property="article:modified_time" content="2026-10-18T11:39:29.174Z">
+<meta property="article:author" content="duan">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="EL表达式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bestduan.cn/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://bestduan.cn/2020/11/27/el-biao-da-shi-jstl/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'EL表达式&& JSTL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-10-18 19:39:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="GodChin" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="GodChin"><span class="site-name">GodChin</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">EL表达式&amp;&amp; JSTL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-27T05:32:30.000Z" title="发表于 2020-11-27 13:32:30">2020-11-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-18T11:39:29.174Z" title="更新于 2026-10-18 19:39:29">2026-10-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">947</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="EL表达式&amp;&amp; JSTL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><pre><code>1. 概念：Expression Language 表达式语言
+2. 作用：替换和简化jsp页面中java代码的编写
+3. 语法：$&#123;表达式&#125;
+4. 注意：
+    * jsp默认支持el表达式的。如果要忽略el表达式
+        1. 设置jsp中page指令中：isELIgnored=&quot;true&quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&#123;表达式&#125; ：忽略当前这个el表达式
+
+
+5. 使用：
+    1. 运算：
+        * 运算符：
+            1. 算数运算符： + - * /(div) %(mod)
+            2. 比较运算符： &gt; &lt; &gt;= &lt;= == !=
+            3. 逻辑运算符： &amp;&amp;(and) ||(or) !(not)
+            4. 空运算符： empty
+                * 功能：用于判断字符串、集合、数组对象是否为null或者长度是否为0
+                * $&#123;empty list&#125;:判断字符串、集合、数组对象是否为null或者长度为0
+                * $&#123;not empty str&#125;:表示判断字符串、集合、数组对象是否不为null 并且 长度&gt;0
+    2. 获取值
+        1. el表达式只能从域对象中获取值
+        2. 语法：
+            1. $&#123;域名称.键名&#125;：从指定域中获取指定键的值
+                * 域名称：
+                    1. pageScope		--&gt; pageContext
+                    2. requestScope 	--&gt; request
+                    3. sessionScope 	--&gt; session
+                    4. applicationScope --&gt; application（ServletContext）
+                * 举例：在request域中存储了name=张三
+                * 获取：$&#123;requestScope.name&#125;
+
+            2. $&#123;键名&#125;：表示依次从最小的域中查找是否有该键对应的值，直到找到为止。
+
+            
+            
+            3. 获取对象、List集合、Map集合的值
+                1. 对象：$&#123;域名称.键名.属性名&#125;
+                    * 本质上会去调用对象的getter方法
+
+                2. List集合：$&#123;域名称.键名[索引]&#125;
+
+                3. Map集合：
+                    * $&#123;域名称.键名.key名称&#125;
+                    * $&#123;域名称.键名[&quot;key名称&quot;]&#125;
+
+
+    3. 隐式对象：
+        * el表达式中有11个隐式对象
+        * pageContext：
+            * 获取jsp其他八个内置对象
+                * $&#123;pageContext.request.contextPath&#125;：动态获取虚拟目录
+                
+</code></pre>
+<h2 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h2><pre><code>1. 概念：JavaServer Pages Tag Library  JSP标准标签库
+    * 是由Apache组织提供的开源的免费的jsp标签		&lt;标签&gt;
+
+2. 作用：用于简化和替换jsp页面上的java代码		
+
+3. 使用步骤：
+    1. 导入jstl相关jar包
+    2. 引入标签库：taglib指令：  &lt;%@ taglib %&gt;
+    3. 使用标签
+
+4. 常用的JSTL标签
+    1. if:相当于java代码的if语句
+        1. 属性：
+            * test 必须属性，接受boolean表达式
+                * 如果表达式为true，则显示if标签体内容，如果为false，则不显示标签体内容
+                * 一般情况下，test属性值会结合el表达式一起使用
+            2. 注意：
+       		 * c:if标签没有else情况，想要else情况，则可以在定义一个c:if标签
+    2. choose:相当于java代码的switch语句
+        1. 使用choose标签声明         			相当于switch声明
+        2. 使用when标签做判断         			相当于case
+        3. 使用otherwise标签做其他情况的声明    	相当于default
+
+    3. foreach:相当于java代码的for语句
+
+5. 练习：
+    * 需求：在request域中有一个存有User对象的List集合。需要使用jstl+el将list集合数据展示到jsp页面的表格table中
+</code></pre>
+<h2 id="三层架构：软件设计架构"><a href="#三层架构：软件设计架构" class="headerlink" title="三层架构：软件设计架构"></a>三层架构：软件设计架构</h2><pre><code>1. 界面层(表示层)：用户看的得界面。用户可以通过界面上的组件和服务器进行交互
+2. 业务逻辑层：处理业务逻辑的。
+3. 数据访问层：操作数据存储文件。
+</code></pre>
+<h2 id="案例：用户信息列表展示"><a href="#案例：用户信息列表展示" class="headerlink" title="案例：用户信息列表展示"></a>案例：用户信息列表展示</h2><pre><code>1. 需求：用户信息的增删改查操作
+2. 设计：
+    1. 技术选型：Servlet+JSP+MySQL+JDBCTempleat+Duird+BeanUtilS+tomcat
+    2. 数据库设计：
+        create database day17; -- 创建数据库
+        use day17; 			   -- 使用数据库
+        create table user(   -- 创建表
+            id int primary key auto_increment,
+            name varchar(20) not null,
+            gender varchar(5),
+            age int,
+            address varchar(32),
+            qq	varchar(20),
+            email varchar(50)
+        );
+
+3. 开发：
+    1. 环境搭建
+        1. 创建数据库环境
+        2. 创建项目，导入需要的jar包
+
+    2. 编码
+
+
+4. 测试
+5. 部署运维
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://bestduan.cn">duan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://bestduan.cn/2020/11/27/el-biao-da-shi-jstl/">https://bestduan.cn/2020/11/27/el-biao-da-shi-jstl/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bestduan.cn" target="_blank">GodChin</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8E%9F%E5%88%9B/">原创</a><a class="post-meta__tags" href="/tags/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/">EL表达式</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/27/cookie-session-jsp-ru-men-xue-xi-bi-ji/" title="Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2020/11/27/encountered-unexpected-token-if-if/" title="Encountered unexpected token: if IF ="><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Encountered unexpected token: if IF =</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/09/06/cacheable-jian-dan-shi-yong/" title="@Cacheable简单使用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-06</div><div class="title">@Cacheable简单使用</div></div></a></div><div><a href="/2020/07/30/arm-xi-tong-shi-yong-docker-bu-shu-de-keng/" title="ARM架构使用Docker部署的坑"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-30</div><div class="title">ARM架构使用Docker部署的坑</div></div></a></div><div><a href="/2022/09/07/bindingexceptione-ji-lu/" title="BindingExceptioné记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-07</div><div class="title">BindingExceptioné记录</div></div></a></div><div><a href="/2020/11/27/cookie-session-jsp-ru-men-xue-xi-bi-ji/" title="Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-27</div><div class="title">Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记</div></div></a></div><div><a href="/2021/10/25/curatorframework-shi-xian-zk-tong-bu-ben-di-pei-zhi/" title="CuratorFramework实现zk同步本地配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-25</div><div class="title">CuratorFramework实现zk同步本地配置</div></div></a></div><div><a href="/2021/04/18/docker-an-zhuang-minio-cun-chu-fu-wu-qi/" title="Docker安装Minio存储服务器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-18</div><div class="title">Docker安装Minio存储服务器</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">duan</div><div class="author-info__description">一起学习一起交流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/909256107"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/909256107" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:909256107@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=909256107&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 GodChin 的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#EL%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">EL表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSTL"><span class="toc-number">2.</span> <span class="toc-text">JSTL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%EF%BC%9A%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E6%9E%B6%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">三层架构：软件设计架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%88%97%E8%A1%A8%E5%B1%95%E7%A4%BA"><span class="toc-number">4.</span> <span class="toc-text">案例：用户信息列表展示</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/" title="分批删除Redis避免宕机">分批删除Redis避免宕机</a><time datetime="2024-04-03T06:40:58.000Z" title="发表于 2024-04-03 14:40:58">2024-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/" title="Docker查看宿主机配置文件目录">Docker查看宿主机配置文件目录</a><time datetime="2023-12-22T09:54:30.000Z" title="发表于 2023-12-22 17:54:30">2023-12-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/" title="EasyExecl导出两个sheet">EasyExecl导出两个sheet</a><time datetime="2023-04-20T06:33:54.000Z" title="发表于 2023-04-20 14:33:54">2023-04-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/" title="Expected one result (or null) to be returned XXXX">Expected one result (or null) to be returned XXXX</a><time datetime="2023-01-13T02:53:18.000Z" title="发表于 2023-01-13 10:53:18">2023-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/07/guang-du-you-xian-sou-suo-bfs/" title="广度优先搜索(BFS)">广度优先搜索(BFS)</a><time datetime="2022-12-07T09:24:58.000Z" title="发表于 2022-12-07 17:24:58">2022-12-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By duan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

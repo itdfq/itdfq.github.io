@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>字符流和字节流的区别 | GodChin</title><meta name="author" content="duan"><meta name="copyright" content="duan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="字节流字节流是指传输过程中，传输数据的最基本单位是字节的流，一个不包含边界数据的连续流；字节流是由字节组成的，主要用在处理二进制数据。 OutputStream字节输出流常用方法这个抽象类是所有表示字节输出流的类的超类。具体方法如下：  write(int b) 将指定的字节写入此输出流 write(byte b[]) 将指定字节数组中的b.length个字节写入此输出流 write(byte b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符流和字节流的区别">
+<meta property="og:url" content="https://bestduan.cn/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/index.html">
+<meta property="og:site_name" content="GodChin">
+<meta property="og:description" content="字节流字节流是指传输过程中，传输数据的最基本单位是字节的流，一个不包含边界数据的连续流；字节流是由字节组成的，主要用在处理二进制数据。 OutputStream字节输出流常用方法这个抽象类是所有表示字节输出流的类的超类。具体方法如下：  write(int b) 将指定的字节写入此输出流 write(byte b[]) 将指定字节数组中的b.length个字节写入此输出流 write(byte b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bestduan.cn/img/avatar.jpg">
+<meta property="article:published_time" content="2022-01-05T08:10:44.000Z">
+<meta property="article:modified_time" content="2026-10-18T11:39:29.175Z">
+<meta property="article:author" content="duan">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="IO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bestduan.cn/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://bestduan.cn/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '字符流和字节流的区别',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-10-18 19:39:29'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="GodChin" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="GodChin"><span class="site-name">GodChin</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/friends/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/contact/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">字符流和字节流的区别</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-05T08:10:44.000Z" title="发表于 2022-01-05 16:10:44">2022-01-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-18T11:39:29.175Z" title="更新于 2026-10-18 19:39:29">2026-10-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/java/">java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="字符流和字节流的区别"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h2><p>字节流是指传输过程中，传输数据的最基本单位是字节的流，一个不包含边界数据的连续流；字节流是由字节组成的，主要用在处理二进制数据。<br><img src="https://img-blog.csdnimg.cn/a6081b9f608d40eba48f40df2e5b918d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASVRkZnE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="字节流结果"></p>
+<h3 id="OutputStream字节输出流"><a href="#OutputStream字节输出流" class="headerlink" title="OutputStream字节输出流"></a>OutputStream字节输出流</h3><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><p>这个抽象类是所有表示字节输出流的类的超类。具体方法如下：</p>
+<ol>
+<li>write(int b)<br> 将指定的字节写入此输出流</li>
+<li>write(byte b[])<br> 将指定字节数组中的b.length个字节写入此输出流</li>
+<li>write(byte b[], int off, int len)<br> 将指定字节数组中的len个字节从偏移量off开始写入此输出流。 write(b, off, len)的一般约定是将数组b中的某些字节按顺序写入输出流； 元素b[off]是写入的第一个字节， b[off+len-1]是此操作写入的最后一个字节</li>
+<li>flush()<br> 刷新此输出流并强制写出任何缓冲的输出字节</li>
+<li>close()<br>关闭此输出流并释放与此流关联的任何系统资源</li>
+</ol>
+<hr>
+<h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><p>FileOutputStream继承OutputStream，有两个常用构造方法</p>
+<ol>
+<li>FileOutputStream(File file)<br> 对文件file进行覆盖写入</li>
+<li>FileOutputStream(File file, boolean append)<br>append:true 代表追加写入</li>
+</ol>
+<h4 id="写入举例"><a href="#写入举例" class="headerlink" title="写入举例"></a>写入举例</h4><ol>
+<li><p>覆盖写入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">write</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">     <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">     <span class="comment">//如果文件不存在会自动创建</span></span><br><span class="line">     <span class="type">OutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(f);</span><br><span class="line">     <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello World\nsddgdgdf&quot;</span>;</span><br><span class="line">     <span class="comment">//因为是字节流，所以要转化成字节数组进行输出</span></span><br><span class="line">     <span class="type">byte</span>[] <span class="variable">b</span> <span class="operator">=</span> str.getBytes();</span><br><span class="line">     out.write(b);</span><br><span class="line">     out.close();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>追加写入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">continueWrite</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">      <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">      <span class="comment">//如果文件不存在会自动创建</span></span><br><span class="line">      <span class="type">OutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(f,<span class="literal">true</span>);</span><br><span class="line">      <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello World\nsddgdgdf3434&quot;</span>;</span><br><span class="line">      <span class="comment">//因为是字节流，所以要转化成字节数组进行输出</span></span><br><span class="line">      <span class="type">byte</span>[] <span class="variable">bytes</span> <span class="operator">=</span> str.getBytes();</span><br><span class="line">      <span class="keyword">for</span> (<span class="type">byte</span> b: bytes)&#123;</span><br><span class="line">          out.write(b);</span><br><span class="line">      &#125;</span><br><span class="line">      out.close();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="InputStream字节输入流"><a href="#InputStream字节输入流" class="headerlink" title="InputStream字节输入流"></a>InputStream字节输入流</h3><p>这个抽象类是表示字节输入流的所有类的超类</p>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><ol>
+<li><p>read()<br> 从输入流中读取下一个字节的数据。 值字节以0到255范围内的int形式返回。 如果由于已到达流末尾而没有可用字节，则返回值-1 。 此方法会阻塞，直到输入数据可用、检测到流结束或抛出异常为止</p>
+</li>
+<li><p>read(byte b[])<br> 从输入流中读取一定数量的字节并将它们存储到缓冲区数组b 。 实际读取的字节数作为整数返回。 此方法会阻塞，直到输入数据可用、检测到文件结尾或抛出异常。<br>如果b的长度为零，则不读取字节并返回0 ； 否则，将尝试读取至少一个字节。 如果由于流位于文件末尾而没有可用字节，则返回值-1 ； 否则，至少读取一个字节并将其存储到b 。<br>读取的第一个字节存储到元素b[0] ，下一个存储到b[1] ，依此类推。 读取的字节数最多等于b的长度。 令k为实际读取的字节数； 这些字节将存储在元素b[0]到b[ k -1] ，而元素b[ k ]到b[b.length-1]不受影响。</p>
+</li>
+<li><p>read(byte b[], int off, int len)<br> 从输入流中读取最多len个字节的数据到一个字节数组中。 尝试读取多达len个字节，但可能会读取较小的数字。 实际读取的字节数作为整数返回。<br> 读取的第一个字节存储到元素b[off] ，下一个存储到b[off+1] ，依此类推</p>
+</li>
+<li><p>skip(long n)<br> 跳过并丢弃此输入流中的n字节数据，在跳过n个字节之前到达文件末尾, 返回实际跳过的字节数并抛出异常。 如果n为负，则InputStream类的skip方法始终返回 0</p>
+</li>
+<li><p>available()<br> 返回当前可以跳过的最大值</p>
+</li>
+<li><p>close()</p>
+</li>
+<li><p>markSupported()<br>如果此流实例支持标记和重置方法，则为true ； 否则为false </p>
+</li>
+<li><p>mark(int readlimit)<br> 标记此输入流中的当前位置。 对reset方法的后续调用将此流重新定位在最后标记的位置，以便后续读取重新读取相同的字节。</p>
+</li>
+<li><p>reset()<br>将此流重新定位到上次在此输入流上调用mark方法时的位置</p>
+</li>
+</ol>
+<h4 id="读取举例"><a href="#读取举例" class="headerlink" title="读取举例"></a>读取举例</h4><ol>
+<li><p>文件大小确定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">read</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(f);</span><br><span class="line">        <span class="comment">//可以根据文件的大小设置字节数组的长度</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">length</span> <span class="operator">=</span> f.length();</span><br><span class="line">        <span class="type">byte</span>[] <span class="variable">bytes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">byte</span>[(<span class="type">int</span>) length];</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> inputStream.read(bytes);</span><br><span class="line">        inputStream.close();</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes, <span class="number">0</span>, len);</span><br><span class="line">        System.out.println(s);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件大小不确定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">readNoSize2</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">       <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">       <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(f);</span><br><span class="line">       <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">       <span class="type">byte</span>[] <span class="variable">bytes</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">6</span>];</span><br><span class="line">       <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="number">0</span>, len = <span class="number">0</span>;</span><br><span class="line">       <span class="comment">//-1文件读取完毕</span></span><br><span class="line">       <span class="keyword">while</span> ((temp = inputStream.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">           bytes[len] = (<span class="type">byte</span>) temp;</span><br><span class="line">           len++;</span><br><span class="line">           <span class="keyword">if</span> (len == <span class="number">6</span>) &#123;</span><br><span class="line">               builder.append(<span class="keyword">new</span> <span class="title class_">String</span>(bytes));</span><br><span class="line">               len = <span class="number">0</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       builder.append(<span class="keyword">new</span> <span class="title class_">String</span>(bytes, <span class="number">0</span>, len));</span><br><span class="line">       inputStream.close();</span><br><span class="line">       System.out.println(builder);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><p>  字节流就是普通的二进制流，读出来的是bit，而字节流不便于处理Unicode形式存储的信息。字符流就是在字节流的基础按照字符编码处理，处理的是char。<br>  <img src="https://img-blog.csdnimg.cn/408ae67c72b54451b7c6bb435cefc32a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBASVRkZnE=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="字符流结构"></p>
+<h3 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h3><h4 id="常用方法-2"><a href="#常用方法-2" class="headerlink" title="常用方法"></a>常用方法</h4><ol>
+<li>read()</li>
+<li>read(char cbuf[])</li>
+<li>read(char cbuf[], int off, int len)</li>
+<li>skip(long n)</li>
+<li>ready()：告诉这个流是否准备好被读取</li>
+<li>markSupported()</li>
+<li>mark(int readAheadLimit)</li>
+<li>reset()</li>
+<li>close()</li>
+</ol>
+<h3 id="字符流读取举例"><a href="#字符流读取举例" class="headerlink" title="字符流读取举例"></a>字符流读取举例</h3><ol>
+<li><p>文件大小确定</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">read</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">    <span class="type">Reader</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(f);</span><br><span class="line">    <span class="type">char</span>[] <span class="variable">chars</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">char</span>[(<span class="type">int</span>) f.length()];</span><br><span class="line">    <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> out.read(chars);</span><br><span class="line">    out.close();</span><br><span class="line">    System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(chars, <span class="number">0</span>, len));</span><br><span class="line">&#125;</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件大小不确定 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">readNoSize</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">       <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">       <span class="type">Reader</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(f);</span><br><span class="line">       <span class="type">char</span>[] <span class="variable">arrs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">6</span>];</span><br><span class="line">       <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">       <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> ((temp = out.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">           arrs[len] = (<span class="type">char</span>) temp;</span><br><span class="line">           len++;</span><br><span class="line">           <span class="keyword">if</span> (len == <span class="number">6</span>) &#123;</span><br><span class="line">               builder.append(arrs);</span><br><span class="line">               len = <span class="number">0</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       builder.append(arrs, <span class="number">0</span>, len);</span><br><span class="line">       out.close();</span><br><span class="line">       System.out.println(builder);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h3><p>用于写入字符流的抽象类；内置一个保存字符串和单个字符写入的临时缓冲，大小为1024</p>
+<h4 id="常用方法-3"><a href="#常用方法-3" class="headerlink" title="常用方法"></a>常用方法</h4><ol>
+<li>write(char cbuf[])</li>
+<li>write(char cbuf[], int off, int len)</li>
+<li>write(String str) ：写入一个字符串</li>
+<li>write(String str, int off, int len)</li>
+<li>append(CharSequence csq)：将指定的字符序列附加到此编写器</li>
+<li>append(CharSequence csq, int start, int end)</li>
+<li>append(char c)</li>
+<li>flush()<br>冲洗流。 如果流已将来自各种 write() 方法的任何字符保存在缓冲区中，则立即将它们写入其预期目的地。 然后，如果该目标是另一个字符或字节流，则刷新它。 因此，一次 flush() 调用将刷新 Writers 和 OutputStreams 链中的所有缓冲区</li>
+<li>close()</li>
+</ol>
+<h4 id="字符流写入举例"><a href="#字符流写入举例" class="headerlink" title="字符流写入举例"></a>字符流写入举例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">void</span> <span class="title function_">writer</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:&quot;</span> + File.separator + <span class="string">&quot;test.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//覆盖原有的</span></span><br><span class="line">        <span class="type">Writer</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(f);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">        out.write(str);</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="字符流和字节流区别"><a href="#字符流和字节流区别" class="headerlink" title="字符流和字节流区别"></a>字符流和字节流区别</h2><ol>
+<li>字节流可用于任何类型的对象，包括二进制对象，而字符流只能处理字符或者字符串； </li>
+<li>字节流提供了处理任何类型的IO操作的功能，但它不能直接处理Unicode字符，而字符流就可以</li>
+<li>字节流默认不使用缓冲区；字符流使用缓冲区</li>
+<li>在硬盘上的所有文件都是以字节形式存在的（图片，声音，视频），而字符值在内存中才会形成。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://bestduan.cn">duan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://bestduan.cn/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/">https://bestduan.cn/2022/01/05/zi-fu-liu-he-zi-jie-liu-de-qu-bie/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bestduan.cn" target="_blank">GodChin</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8E%9F%E5%88%9B/">原创</a><a class="post-meta__tags" href="/tags/IO/">IO</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/11/ding-ding-qun-ji-qi-ren-gao-jing-gong-ju/" title="钉钉群机器人告警工具"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">钉钉群机器人告警工具</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/05/spring-bean-de-hou-zhi-chu-li/" title="Spring Bean的后置处理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Spring Bean的后置处理</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/09/06/cacheable-jian-dan-shi-yong/" title="@Cacheable简单使用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-06</div><div class="title">@Cacheable简单使用</div></div></a></div><div><a href="/2020/07/30/arm-xi-tong-shi-yong-docker-bu-shu-de-keng/" title="ARM架构使用Docker部署的坑"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-30</div><div class="title">ARM架构使用Docker部署的坑</div></div></a></div><div><a href="/2022/09/07/bindingexceptione-ji-lu/" title="BindingExceptioné记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-07</div><div class="title">BindingExceptioné记录</div></div></a></div><div><a href="/2020/11/27/cookie-session-jsp-ru-men-xue-xi-bi-ji/" title="Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-27</div><div class="title">Cookie   &amp;&amp; Session   &amp;&amp; JSP：入门学习笔记</div></div></a></div><div><a href="/2021/10/25/curatorframework-shi-xian-zk-tong-bu-ben-di-pei-zhi/" title="CuratorFramework实现zk同步本地配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-25</div><div class="title">CuratorFramework实现zk同步本地配置</div></div></a></div><div><a href="/2021/04/18/docker-an-zhuang-minio-cun-chu-fu-wu-qi/" title="Docker安装Minio存储服务器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-18</div><div class="title">Docker安装Minio存储服务器</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">duan</div><div class="author-info__description">一起学习一起交流</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/909256107"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/909256107" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:909256107@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=909256107&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq" style="color: #12b7f5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到 GodChin 的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E8%8A%82%E6%B5%81"><span class="toc-number">1.</span> <span class="toc-text">字节流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OutputStream%E5%AD%97%E8%8A%82%E8%BE%93%E5%87%BA%E6%B5%81"><span class="toc-number">1.1.</span> <span class="toc-text">OutputStream字节输出流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FileOutputStream"><span class="toc-number">1.1.2.</span> <span class="toc-text">FileOutputStream</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">写入举例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81"><span class="toc-number">1.2.</span> <span class="toc-text">InputStream字节输入流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">读取举例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="toc-number">2.</span> <span class="toc-text">字符流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader"><span class="toc-number">2.1.</span> <span class="toc-text">Reader</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-2"><span class="toc-number">2.1.1.</span> <span class="toc-text">常用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E8%AF%BB%E5%8F%96%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">字符流读取举例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Writer"><span class="toc-number">2.3.</span> <span class="toc-text">Writer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95-3"><span class="toc-number">2.3.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%86%99%E5%85%A5%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text">字符流写入举例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E5%92%8C%E5%AD%97%E8%8A%82%E6%B5%81%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">字符流和字节流区别</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/03/fen-pi-shan-chu-redis-bi-mian-dang-ji/" title="分批删除Redis避免宕机">分批删除Redis避免宕机</a><time datetime="2024-04-03T06:40:58.000Z" title="发表于 2024-04-03 14:40:58">2024-04-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/22/docker-cha-kan-su-zhu-ji-pei-zhi-wen-jian-mu-lu/" title="Docker查看宿主机配置文件目录">Docker查看宿主机配置文件目录</a><time datetime="2023-12-22T09:54:30.000Z" title="发表于 2023-12-22 17:54:30">2023-12-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/20/easyexecl-dao-chu-liang-ge-sheet/" title="EasyExecl导出两个sheet">EasyExecl导出两个sheet</a><time datetime="2023-04-20T06:33:54.000Z" title="发表于 2023-04-20 14:33:54">2023-04-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/13/expected-one-result-or-null-to-be-returned-xxxx/" title="Expected one result (or null) to be returned XXXX">Expected one result (or null) to be returned XXXX</a><time datetime="2023-01-13T02:53:18.000Z" title="发表于 2023-01-13 10:53:18">2023-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/12/07/guang-du-you-xian-sou-suo-bfs/" title="广度优先搜索(BFS)">广度优先搜索(BFS)</a><time datetime="2022-12-07T09:24:58.000Z" title="发表于 2022-12-07 17:24:58">2022-12-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2026 By duan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
